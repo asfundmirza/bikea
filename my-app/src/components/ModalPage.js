@@ -196,7 +196,7 @@ const ModalPage = () => {
         </div>
       </div>
 
-      {/* Aero Bike X */}
+      {/* Aero Bike X for mobile*/}
 
       {/* <div className="flex items-center justify-center mt-14 flex-1">
         <h1 className="font-semibold text-3xl">Aero Bike X</h1>
