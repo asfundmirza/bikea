@@ -1,4 +1,6 @@
 import React from "react";
+import aboutBike from "../images/AboutBike.svg";
+import bikeaLogo from "../images/bikea-01.svg";
 
 const About = () => {
   return (
@@ -92,7 +94,21 @@ const About = () => {
 
         {/* Image */}
 
-        <div className="flex flex-1 justify-center items-center "> IMAGE</div>
+        <div className="flex flex-1 justify-center items-center mt-5 ">
+          <img
+            src={aboutBike}
+            alt="AboutBike"
+            width={300}
+            height={300}
+            className=" rounded-md w-auto h-auto md:w-[600px] md:h-[400px]"
+          />
+        </div>
+      </div>
+
+      {/* Logo image */}
+
+      <div className="flex justify-center  mt-7 mb-10 ">
+        <img src={bikeaLogo} alt="bikeaLogo" width={100} height={100} />
       </div>
     </div>
   );
