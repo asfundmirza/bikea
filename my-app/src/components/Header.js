@@ -2,7 +2,7 @@ import React from "react";
 import bikeaLogo from "../images/bikea-01.svg";
 const Header = () => {
   return (
-    <div className="flex w-full p-3  bg-white shadow-md items-center justify-between px-8 ">
+    <div className="flex w-full p-3 h-[3rem]  bg-white shadow-md items-center justify-between px-8 ">
       <div className="flex justify-start">
         <img src={bikeaLogo} alt="bikeaLogo" width={70} height={70} />
       </div>
