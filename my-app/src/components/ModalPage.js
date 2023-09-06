@@ -151,8 +151,14 @@ const ModalPage = () => {
 
         {/* Aero bike description for mobile */}
 
-        <div className="md:hidden flex  flex-1 flex-col gap-4 mt-9 mb-3 px-8">
+        <div className="md:hidden flex  flex-1 flex-col gap-4 mt-5 mb-3 px-8">
           <div className="flex flex-col gap-y-2">
+            <div className="flex items-center justify-center mb-3">
+              <p className="font-mono font-light">
+                <span className="font-bold">Price:</span>
+                $300.00
+              </p>
+            </div>
             <div className="flex items-center justify-center  ">
               <p className="font-bold bg-customGreen border rounded-3xl border-customGreen  text-center w-40 h-9 flex items-center justify-center">
                 Battery Timing
@@ -258,8 +264,14 @@ const ModalPage = () => {
           </div>
         </div>
 
-        <div className="flex  flex-1 flex-col gap-4 mt-9 mb-3 px-8">
+        <div className="flex  flex-1 flex-col gap-4 mt-5 mb-3 px-8">
           <div className="flex flex-col gap-y-2">
+            <div className="flex items-center justify-center mb-3">
+              <p className="font-mono font-light">
+                <span className="font-bold">Price:</span>
+                $400.00
+              </p>
+            </div>
             <div className="flex items-center justify-center  ">
               <p className="font-bold bg-customGreen border rounded-3xl border-customGreen  text-center w-40 h-9 flex items-center justify-center">
                 Battery Timing
