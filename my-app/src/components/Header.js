@@ -28,23 +28,23 @@ const Header = () => {
           width={100}
           height={100}
           onClick={bikeaImgHandler}
-          className="hover:cursor-pointer hover:border-none rounded-lg px-4 py-0 md:py-2 transition-all duration-100"
+          className="hover:cursor-pointer "
         />
       </div>
       <div className="flex justify-center gap-x-0 md:gap-x-1 flex-grow">
-        <p
+        <button
           onClick={modelHandler}
-          className="hover:cursor-pointer hover:bg-customGreen hover:border rounded-lg hover:border-customGreen px-4 py-0 md:py-1 transition-all duration-100"
+          className="hover:cursor-pointer hover:bg-customGreen  rounded-lg px-4 py-0 md:py-1 transition-all duration-100"
         >
           Model
-        </p>
+        </button>
 
-        <p
+        <button
           onClick={aboutHandler}
-          className="hover:cursor-pointer hover:bg-customGreen hover:border rounded-lg hover:border-customGreen px-4 py-0 md:py-1 transition-all duration-100"
+          className="hover:cursor-pointer hover:bg-customGreen  rounded-lg px-4 py-0 md:py-1 transition-all duration-100"
         >
           About
-        </p>
+        </button>
       </div>
       <div className="flex justify-end space-x-5 items-center">
         <ShoppingCartIcon
