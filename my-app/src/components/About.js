@@ -1,8 +1,10 @@
 import React from "react";
 import aboutBike from "../images/AboutBike.svg";
 import bikeaLogo from "../images/bikea-01.svg";
-
+import { useNavigate } from "react-router-dom";
 const About = () => {
+  let navigate = useNavigate();
+
   return (
     <div className="flex flex-col">
       {/* About Header */}
