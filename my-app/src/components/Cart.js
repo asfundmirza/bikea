@@ -6,32 +6,32 @@ const Cart = () => {
       {/* white section */}
 
       <div className="flex flex-1 h-full w-auto justify-center md:justify-start px-0 ">
-        <div className="flex flex-col flex-1 md:px-7 mt-5 md:mt-[100px] justify-evenly items-center md:items-start md:justify-start">
+        <div className="flex flex-col flex-1  md:pl-7 mt-5 md:mt-[100px] justify-evenly items-center md:items-start md:justify-start">
           <h1 className="font-bold text-3xl md:text-4xl md:mb-5">
             Shopping Cart
           </h1>
-          <div className="flex flex-col w-full md:flex-row  gap-1">
+          <div className="flex flex-col w-full md:flex-row  md:gap-1 gap-9">
             <div className="flex justify-center">
               <img
                 src={BikeImage}
                 alt="Bike"
-                width={300}
-                height={300}
+                width={150}
+                height={150}
                 className="md:w-[200px] md:h-[200px]"
               />
             </div>
-            <div className="flex  md:mt-0 justify-evenly md:flex-auto gap-5 md:gap-2">
+            <div className="flex  md:mt-0 justify-evenly md:flex-auto gap-3 md:gap-1">
               <div className="flex flex-col justify-center items-center gap-3">
-                <p className="font-semibold">Model</p>
-                <p>Aero</p>
+                <p className="font-semibold md:text-xl text-lg">Model</p>
+                <p className="md:text-xl text-lg">Aero</p>
               </div>
               <div className="flex flex-col justify-center items-center gap-3">
-                <p className="font-semibold">Total</p>
-                <p>$300</p>
+                <p className="font-semibold md:text-xl text-lg">Total</p>
+                <p className="md:text-xl text-lg">$300</p>
               </div>
               <div className="flex flex-col justify-center items-center gap-3">
-                <p className="font-semibold">Sub-Total</p>
-                <p>$300</p>
+                <p className="font-semibold md:text-xl text-lg">Sub-Total</p>
+                <p className="md:text-xl text-lg">$300</p>
               </div>
             </div>
           </div>
