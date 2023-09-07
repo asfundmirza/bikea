@@ -1,6 +1,8 @@
 import React from "react";
 import bikeaLogo from "../images/bikea-01.svg";
 import { useNavigate } from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 const Header = () => {
   let navigate = useNavigate();
 
@@ -12,6 +14,9 @@ const Header = () => {
   };
   const bikeaImgHandler = () => {
     navigate("/home");
+  };
+  const cartHandler = () => {
+    navigate("/cart");
   };
 
   return (
@@ -41,7 +46,12 @@ const Header = () => {
           About
         </p>
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-end space-x-5 items-center">
+        <ShoppingCartIcon
+          fontSize="small"
+          className="hover:cursor-pointer"
+          onClick={cartHandler}
+        />
         <p>My Account</p>
       </div>
     </div>

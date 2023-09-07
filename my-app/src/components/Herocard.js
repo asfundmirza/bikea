@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
@@ -13,7 +13,7 @@ const Herocard = (props) => {
         style={{ fontSize: "15vw" }}
       >
         <h1 className="font-bold tracking-wide text-buttonGreen relative">
-         {props.bigHeading}
+          {props.bigHeading}
           <img
             src={props.modelImage}
             alt="Bike"
@@ -23,7 +23,6 @@ const Herocard = (props) => {
           />
         </h1>
       </div>
-
 
       <div
         className="flex absolute flex-col w-full md:w-[30%] bg-customGreen p-5 "
@@ -41,7 +40,7 @@ const Herocard = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Herocard
+export default Herocard;
