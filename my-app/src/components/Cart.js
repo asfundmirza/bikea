@@ -40,7 +40,7 @@ const Cart = () => {
 
       {/* green section */}
       <div className="flex flex-[0.6] h-full w-auto px-10  bg-customGreen">
-        <div className="flex flex-col flex-auto mt-5 mb-2 justify-evenly items-center">
+        <div className="flex flex-col flex-auto md:mt-5 md:mb-2 justify-evenly items-center">
           <h1 className="font-bold text-3xl md:text-4xl">Cart Total</h1>
           <div className="flex justify-between w-full px-5 ">
             <h1 className="font-semibold md:text-xl text-lg">Sub Total</h1>
@@ -54,7 +54,7 @@ const Cart = () => {
             <h1 className="font-semibold md:text-xl text-lg">Total</h1>
             <h1 className="md:text-xl text-lg">$400</h1>
           </div>
-          <div className="flex w-full justify-center  px-5 mt-3">
+          <div className="flex w-full justify-center  px-5">
             <button className="bg-black text-white px-5  text-center text-lg rounded-md  py-2">
               Proceed to checkout
             </button>
