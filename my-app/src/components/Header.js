@@ -23,7 +23,7 @@ const Header = () => {
           width={100}
           height={100}
           onClick={bikeaImgHandler}
-          className="hover:cursor-pointer hover:bg-customGreen hover:border rounded-lg hover:border-customGreen px-4 py-0 md:py-2 transition-all duration-100"
+          className="hover:cursor-pointer hover:border-none rounded-lg px-4 py-0 md:py-2 transition-all duration-100"
         />
       </div>
       <div className="flex justify-center gap-x-0 md:gap-x-1 flex-grow">
