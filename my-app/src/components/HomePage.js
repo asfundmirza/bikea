@@ -8,7 +8,7 @@ const HomePage = () => {
       <div className="flex flex-1 bg-customGreen w-1/2 h-full items-center justify-center"></div>
       <div className="flex flex-1 bg-white w-1/2 h-full items-center justify-center"></div>
       <div
-        className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+        className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2  "
         style={{ fontSize: "15vw" }}
       >
         <h1 className="font-bold tracking-wide text-buttonGreen relative">
