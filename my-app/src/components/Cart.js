@@ -2,7 +2,7 @@ import React from "react";
 import BikeImage from "../images/Bike.svg";
 const Cart = () => {
   return (
-    <div className="flex flex-col md:flex-row w-screen h-[calc(100vh-3rem)] m-0 ">
+    <div className="flex flex-col md:flex-row w-screen h-[100vh] pt-12 m-0 ">
       {/* white section */}
 
       <div className="flex flex-1 h-full w-auto justify-center md:justify-start px-0 ">
@@ -25,13 +25,15 @@ const Cart = () => {
                 <p className="font-semibold md:text-xl text-lg">Model</p>
                 <p className="md:text-xl text-lg">Aero</p>
               </div>
-              <div className="flex flex-col justify-center items-center gap-3">
-                <p className="font-semibold md:text-xl text-lg">Total</p>
-                <p className="md:text-xl text-lg">$300</p>
-              </div>
+
               <div className="flex flex-col justify-center items-center gap-3">
                 <p className="font-semibold md:text-xl text-lg">Sub-Total</p>
                 <p className="md:text-xl text-lg">$300</p>
+              </div>
+              <div className="flex flex-col justify-center items-center gap-3">
+                {/* <p className="font-semibold md:text-xl text-lg">Total</p>
+                <p className="md:text-xl text-lg">$300</p> */}
+                <button></button>
               </div>
             </div>
           </div>

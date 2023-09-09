@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import CycleImage from "../images/Bike.svg";
 import batteryImage from "../images/battery icon.svg";
 import speedImage from "../images/speed icon.svg";
 import weightImage from "../images/weight icon.svg";
 import { productsArray } from "../ProductStore";
 import { getProductsData } from "../ProductStore";
+import { CartContext } from "../CartContext";
 
 const ModalPage = () => {
+  const cart = useContext(CartContext);
+  console.log(cart.items);
+
   return (
     <div className="pt-12">
       {productsArray.map((product) =>
@@ -71,7 +75,10 @@ const ModalPage = () => {
                         ${product.price}.00
                       </span>
                     </p>
-                    <button className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit">
+                    <button
+                      onClick={() => cart.addOneToCart(product.id)}
+                      className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                    >
                       Add to Cart
                     </button>
                   </div>
@@ -124,7 +131,10 @@ const ModalPage = () => {
                       ${product.price}.00
                     </span>
                   </p>
-                  <button className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit">
+                  <button
+                    onClick={() => cart.addOneToCart(product.id)}
+                    className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -186,7 +196,10 @@ const ModalPage = () => {
                         ${product.price}.00
                       </span>
                     </p>
-                    <button className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit">
+                    <button
+                      onClick={() => cart.addOneToCart(product.id)}
+                      className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                    >
                       Add to Cart
                     </button>
                   </div>
@@ -236,7 +249,10 @@ const ModalPage = () => {
                       ${product.price}.00
                     </span>
                   </p>
-                  <button className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit">
+                  <button
+                    onClick={() => cart.addOneToCart(product.id)}
+                    className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                  >
                     Add to Cart
                   </button>
                 </div>
