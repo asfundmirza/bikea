@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex w-full p-3 h-[3rem]  bg-white shadow-md items-center justify-between px-8 ">
+    <div className="flex w-full p-3 h-[3rem] fixed top-0 left-0 z-50  bg-white shadow-md items-center justify-between px-8 ">
       <div className="flex justify-start">
         <img
           src={bikeaLogo}

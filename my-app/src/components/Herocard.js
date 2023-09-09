@@ -5,7 +5,7 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 const Herocard = (props) => {
   return (
-    <div className="flex m-0 w-full h-[calc(100vh-3rem)] relative ">
+    <div className="flex   m-0 w-full h-[100vh] pt-12 relative ">
       <div className="flex flex-1  md:bg-customGreen w-1/2 h-full items-center justify-center"></div>
       <div className="flex flex-1 bg-white w-1/2 h-full items-center justify-center"></div>
       <div
