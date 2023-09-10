@@ -8,8 +8,8 @@ const HomePage = () => {
     <div>
       <Herocard
         bigHeading="POWER"
-        modelName={getProductsData("1").title}
-        modelPrice={`$${getProductsData("1").price}.00`}
+        modelName="Aero"
+        modelPrice="$300"
         modelImage={bikeImage}
       />
     </div>

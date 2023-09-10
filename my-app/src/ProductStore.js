@@ -1,13 +1,16 @@
 import React from "react";
 
+//Aero:price_1NodRWAdcivc1ys1jTk6jgp4
+//Aero  X:price_1NodSsAdcivc1ys14H7I0ajE
+
 const productsArray = [
   {
-    id: "1",
+    id: "price_1NodRWAdcivc1ys1jTk6jgp4",
     title: "Aero",
     price: 300.0,
   },
   {
-    id: "2",
+    id: "price_1NodSsAdcivc1ys14H7I0ajE",
     title: "Aero X",
     price: 400.0,
   },

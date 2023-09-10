@@ -11,6 +11,24 @@ const Cart = () => {
     return cartItems;
   });
 
+  const checkoutHandler = async () => {
+    await fetch("http://localhost:4000/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items: cart.items }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        if (response.url) {
+          window.location.assign(response.url);
+        }
+      });
+  };
+
   console.log(productQuantity);
   return (
     <div className="flex flex-col md:flex-row w-screen h-[100vh] pt-12 m-0 ">
@@ -102,7 +120,10 @@ const Cart = () => {
             </h1>
           </div>
           <div className="flex w-full justify-center  px-5">
-            <button className="bg-black text-white px-5  text-center text-lg rounded-md  py-2">
+            <button
+              onClick={checkoutHandler}
+              className="bg-black text-white px-5  text-center text-lg rounded-md  py-2"
+            >
               Proceed to checkout
             </button>
           </div>
