@@ -15,7 +15,7 @@ const ModalPage = () => {
   return (
     <div className="pt-12">
       {productsArray.map((product) =>
-        product.id === "1" ? (
+        product.id === "price_1NodRWAdcivc1ys1jTk6jgp4" ? (
           <div key={product.id} className="flex flex-col md:flex-row  ">
             {/* Aero bike image */}
 
