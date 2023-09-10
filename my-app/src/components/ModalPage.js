@@ -9,6 +9,7 @@ import { CartContext } from "../CartContext";
 
 const ModalPage = () => {
   const cart = useContext(CartContext);
+
   console.log(cart.items);
 
   return (
