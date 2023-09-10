@@ -25,7 +25,11 @@ const Cart = () => {
           </h1>
 
           {productQuantity.every((qty) => qty === 0) ? (
-            <div>Empty</div>
+            <div className="flex flex-row w-full">
+              <div className="flex font-semibold md:mt-[150px] text-3xl items-center justify-center">
+                Your cart is Empty!
+              </div>
+            </div>
           ) : (
             productsArray.map((product, index) => {
               return productQuantity[index] > 0 ? (
@@ -52,14 +56,20 @@ const Cart = () => {
                       <p className="font-semibold md:text-xl text-lg">
                         Sub-Total
                       </p>
-                      <p className="md:text-xl text-lg">{product.price}</p>
+                      <p className="md:text-xl text-lg">${product.price}</p>
                     </div>
                     <div className="flex flex-row justify-center items-center gap-3">
-                      <button className="bg-black w-8 h-8 rounded-lg flex items-center justify-center hover:bg-gray-600 text-white">
+                      <button
+                        onClick={() => cart.removeOneFromCart(product.id)}
+                        className="bg-black w-8 h-8 rounded-lg flex items-center justify-center hover:bg-gray-600 text-white"
+                      >
                         -
                       </button>
                       <p>{productQuantity[index]}</p>
-                      <button className="bg-black w-8 h-8 rounded-lg flex items-center justify-center hover:bg-gray-600 text-white">
+                      <button
+                        onClick={() => cart.addOneToCart(product.id)}
+                        className="bg-black w-8 h-8 rounded-lg flex items-center justify-center hover:bg-gray-600 text-white"
+                      >
                         +
                       </button>
                     </div>
