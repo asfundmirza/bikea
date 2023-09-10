@@ -6,7 +6,7 @@ const About = () => {
   let navigate = useNavigate();
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pt-12">
       {/* About Header */}
 
       <div className="flex  bg-customGreen p-4 py-8 ">
