@@ -11,15 +11,13 @@ const Cart = () => {
     return cartItems;
   });
 
-  // const productQuantity = cart.getProductQuantity(product.id);
   console.log(productQuantity);
-  // console.log(cart.items);
   return (
     <div className="flex flex-col md:flex-row w-screen h-[100vh] pt-12 m-0 ">
       {/* white section */}
 
       <div className="flex flex-1 h-full w-auto justify-center md:justify-start px-0 ">
-        <div className="flex flex-col flex-1  md:pl-7 mt-5 md:mt-[100px] justify-evenly items-center md:items-start md:justify-start">
+        <div className="flex flex-col flex-1  md:pl-7 mt-2 md:mt-[100px] justify-evenly items-center md:items-start md:justify-start">
           <h1 className="font-bold text-3xl md:text-4xl md:mb-5">
             Shopping Cart
           </h1>
@@ -41,8 +39,8 @@ const Cart = () => {
                     <img
                       src={BikeImage}
                       alt="Bike"
-                      width={150}
-                      height={150}
+                      width={100}
+                      height={100}
                       className="md:w-[200px] md:h-[200px]"
                     />
                   </div>
@@ -56,7 +54,9 @@ const Cart = () => {
                       <p className="font-semibold md:text-xl text-lg">
                         Sub-Total
                       </p>
-                      <p className="md:text-xl text-lg">${product.price}</p>
+                      <p className="md:text-xl text-lg">
+                        ${product.price * productQuantity[index]}
+                      </p>
                     </div>
                     <div className="flex flex-row justify-center items-center gap-3">
                       <button
@@ -87,15 +87,19 @@ const Cart = () => {
           <h1 className="font-bold text-3xl md:text-4xl">Cart Total</h1>
           <div className="flex justify-between w-full px-5 ">
             <h1 className="font-semibold md:text-xl text-lg">Sub Total</h1>
-            <h1 className="md:text-xl text-lg">$300</h1>
+            <h1 className="md:text-xl text-lg">${cart.getTotalCost()}</h1>
           </div>
           <div className="flex justify-between w-full px-5 ">
             <h1 className="font-semibold md:text-xl text-lg">Shipping</h1>
-            <h1 className="md:text-xl text-lg">$100</h1>
+            <h1 className="md:text-xl text-lg">
+              {cart.getTotalCost() > 0 ? "$100" : "$0"}
+            </h1>
           </div>
           <div className="flex justify-between w-full px-5 ">
             <h1 className="font-semibold md:text-xl text-lg">Total</h1>
-            <h1 className="md:text-xl text-lg">$400</h1>
+            <h1 className="md:text-xl text-lg">
+              ${cart.getTotalCost() > 0 ? cart.getTotalCost() + 100 : "0"}
+            </h1>
           </div>
           <div className="flex w-full justify-center  px-5">
             <button className="bg-black text-white px-5  text-center text-lg rounded-md  py-2">
