@@ -51,31 +51,47 @@ const Cart = () => {
               return productQuantity[index] > 0 ? (
                 <div
                   key={product.id}
-                  className="flex flex-col w-full md:flex-row  md:gap-1 gap-9"
+                  className="flex  w-full flex-row justify-between px-6 md:px-0 md:justify-center md:gap-1 "
                 >
-                  <div className="flex justify-center">
-                    <img
-                      src={BikeImage}
-                      alt="Bike"
-                      width={100}
-                      height={100}
-                      className="md:w-[200px] md:h-[200px]"
-                    />
+                  <div className=" flex gap-5">
+                    <div className="flex justify-center">
+                      <img
+                        src={BikeImage}
+                        alt="Bike"
+                        width={70}
+                        height={70}
+                        className="md:w-[150px] md:h-[150px]"
+                      />
+                    </div>
+                    {/* title and price for mobile */}
+
+                    <div className="md:hidden flex flex-col justify-center items-center gap-0">
+                      <p className="md:text-xl text-lg font-semibold">
+                        {product.title}
+                      </p>
+                      <p className="md:text-xl text-lg">
+                        ${product.price * productQuantity[index]}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex  md:mt-0 justify-evenly md:flex-auto gap-3 md:gap-1">
-                    <div className="flex flex-col justify-center items-center gap-3">
-                      <p className="font-semibold md:text-xl text-lg">Model</p>
+
+                  <div className="flex  md:mt-0 justify-evenly md:items-center md:flex-auto gap-3 md:gap-1">
+                    {/* title and price for web */}
+
+                    <div className="hidden md:block  flex-col justify-center items-center gap-3">
+                      <p className=" font-semibold md:text-xl text-lg">Model</p>
                       <p className="md:text-xl text-lg">{product.title}</p>
                     </div>
 
-                    <div className="flex flex-col justify-center items-center gap-3">
-                      <p className="font-semibold md:text-xl text-lg">
+                    <div className="hidden md:block  flex-col justify-center items-center gap-3">
+                      <p className=" font-semibold md:text-xl text-lg">
                         Sub-Total
                       </p>
                       <p className="md:text-xl text-lg">
                         ${product.price * productQuantity[index]}
                       </p>
                     </div>
+
                     <div className="flex flex-row justify-center items-center gap-3">
                       <button
                         onClick={() => cart.removeOneFromCart(product.id)}
