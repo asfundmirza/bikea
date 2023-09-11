@@ -41,8 +41,8 @@ const Cart = () => {
           </h1>
 
           {productQuantity.every((qty) => qty === 0) ? (
-            <div className="flex flex-row w-full">
-              <div className="flex font-semibold md:mt-[150px] text-3xl items-center justify-center">
+            <div className="flex  w-full justify-center">
+              <div className="flex font-semibold md:mt-[150px] text-3xl ">
                 Your cart is Empty!
               </div>
             </div>
@@ -53,7 +53,7 @@ const Cart = () => {
                   key={product.id}
                   className="flex  w-full flex-row justify-between px-6 md:px-0 md:justify-center md:gap-1 "
                 >
-                  <div className=" flex gap-5">
+                  <div className=" flex gap-9">
                     <div className="flex justify-center">
                       <img
                         src={BikeImage}
@@ -66,7 +66,7 @@ const Cart = () => {
                     {/* title and price for mobile */}
 
                     <div className="md:hidden flex flex-col justify-center items-center gap-0">
-                      <p className="md:text-xl text-lg font-semibold">
+                      <p className="md:text-xl text-xl font-semibold">
                         {product.title}
                       </p>
                       <p className="md:text-xl text-lg">
