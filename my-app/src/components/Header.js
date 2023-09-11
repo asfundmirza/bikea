@@ -9,6 +9,7 @@ import Mobilemenu from "./Mobilemenu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import "./UserMenu.css";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -101,13 +102,28 @@ const Header = () => {
               onClose={handleClose}
               PaperProps={{
                 style: {
-                  width: "15ch",
+                  width: "150px",
+                  height: "150px",
+                  paddingTop: "20px",
+                  paddingBottom: "20px",
                 },
               }}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                className="centeredMenuItem"
+                sx={{ fontSize: "20px" }}
+              >
+                Profile
+              </MenuItem>
 
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                className="centeredMenuItem"
+                sx={{ fontSize: "20px" }}
+              >
+                Logout
+              </MenuItem>
             </Menu>
           </div>
         </div>
