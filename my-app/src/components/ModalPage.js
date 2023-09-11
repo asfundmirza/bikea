@@ -78,7 +78,7 @@ const ModalPage = () => {
                     </p>
                     <button
                       onClick={() => cart.addOneToCart(product.id)}
-                      className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                      className="bg-buttonGreen border p-1 px-6 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
                     </button>
@@ -134,7 +134,7 @@ const ModalPage = () => {
                   </p>
                   <button
                     onClick={() => cart.addOneToCart(product.id)}
-                    className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                    className="bg-buttonGreen border  p-1 px-3 rounded-[4px] text-center w-fit"
                   >
                     Add to Cart
                   </button>
@@ -199,13 +199,15 @@ const ModalPage = () => {
                     </p>
                     <button
                       onClick={() => cart.addOneToCart(product.id)}
-                      className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                      className="bg-buttonGreen  border p-1 px-6 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
                     </button>
                   </div>
                 </div>
+
                 {/* Aero bike X icons */}
+
                 <div className="flex md:flex-col mt-10 md:mt-0 justify-evenly items-center px-2 md:px-0 md:gap-20  ">
                   <div className="flex flex-col items-center ">
                     <img
@@ -252,7 +254,7 @@ const ModalPage = () => {
                   </p>
                   <button
                     onClick={() => cart.addOneToCart(product.id)}
-                    className="bg-buttonGreen border p-1 px-3 rounded-xl text-center w-fit"
+                    className="bg-buttonGreen border p-1 px-3 rounded-[4px] text-center w-fit"
                   >
                     Add to Cart
                   </button>
