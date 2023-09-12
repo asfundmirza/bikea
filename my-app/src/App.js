@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import CartProvider from "./CartContext";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
+import Signin from "./components/Signin";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/home" element={<HomePage />} />
+          <Route path="/sign-in" element={<Signin />} />
           <Route path="/model" element={<ModalPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<CartPage />} />
