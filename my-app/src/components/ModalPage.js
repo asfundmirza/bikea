@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CycleImage from "../images/Bike.svg";
 import batteryImage from "../images/battery icon.svg";
 import speedImage from "../images/speed icon.svg";
@@ -8,15 +8,26 @@ import { getProductsData } from "../ProductStore";
 import { CartContext } from "../CartContext";
 
 const ModalPage = () => {
+  const [showMessage, setShowMessage] = useState(false);
   const cart = useContext(CartContext);
 
-  console.log(cart.items);
+  const addToCartHandler = () => {
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000);
+  };
 
   return (
     <div className="pt-12">
       {productsArray.map((product) =>
         product.id === "price_1NodRWAdcivc1ys1jTk6jgp4" ? (
           <div key={product.id} className="flex flex-col md:flex-row  ">
+            {showMessage && (
+              <div className="bg-black text-white shadow-md fixed top-[30%] left-1/2 rounded-lg px-4 transform -translate-x-1/2 -translate-y-1/2 p-2 z-50">
+                Added to Cart
+              </div>
+            )}
             {/* Aero bike image */}
 
             <div className="flex flex-1 md:flex-[0.6]  mb-4 md:mb-0 md:mt-0 bg-customGreen w-full   h-fit md:h-auto   ">
@@ -77,7 +88,10 @@ const ModalPage = () => {
                       </span>
                     </p>
                     <button
-                      onClick={() => cart.addOneToCart(product.id)}
+                      onClick={() => {
+                        cart.addOneToCart(product.id);
+                        addToCartHandler();
+                      }}
                       className="bg-buttonGreen border p-1 px-6 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
@@ -132,8 +146,12 @@ const ModalPage = () => {
                       ${product.price}.00
                     </span>
                   </p>
+
                   <button
-                    onClick={() => cart.addOneToCart(product.id)}
+                    onClick={() => {
+                      cart.addOneToCart(product.id);
+                      addToCartHandler();
+                    }}
                     className="bg-buttonGreen border  p-1 px-3 rounded-[4px] text-center w-fit"
                   >
                     Add to Cart
@@ -198,7 +216,10 @@ const ModalPage = () => {
                       </span>
                     </p>
                     <button
-                      onClick={() => cart.addOneToCart(product.id)}
+                      onClick={() => {
+                        cart.addOneToCart(product.id);
+                        addToCartHandler();
+                      }}
                       className="bg-buttonGreen  border p-1 px-6 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
@@ -252,8 +273,12 @@ const ModalPage = () => {
                       ${product.price}.00
                     </span>
                   </p>
+
                   <button
-                    onClick={() => cart.addOneToCart(product.id)}
+                    onClick={() => {
+                      cart.addOneToCart(product.id);
+                      addToCartHandler();
+                    }}
                     className="bg-buttonGreen border p-1 px-3 rounded-[4px] text-center w-fit"
                   >
                     Add to Cart

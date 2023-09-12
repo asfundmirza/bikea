@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
-import { Transition } from '@headlessui/react';
+import React, { useState } from "react";
+import { Transition } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
 
-
 const Mobilemenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggleMenu = () => {
-      setIsOpen(!isOpen);
-    }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-    let navigate = useNavigate();
-    const modelHandler = () => {
-        navigate("/model");
-      };
-      const aboutHandler = () => {
-        navigate("/about");
-      };
-      const bikeaImgHandler = () => {
-        navigate("/home");
-      };
-      
+  let navigate = useNavigate();
+  const modelHandler = () => {
+    navigate("/model");
+  };
+  const aboutHandler = () => {
+    navigate("/about");
+  };
+  const bikeaImgHandler = () => {
+    navigate("/home");
+  };
+
   return (
     <div className="relative inset-0 flex z-100">
       {/* Background overlay */}
@@ -33,7 +32,8 @@ const Mobilemenu = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
         className="fixed inset-0  bg-black opacity-50"
-        aria-hidden={isOpen ? 'false' : 'true'}
+        aria-hidden={isOpen ? "false" : "true"}
+        onClick={toggleMenu}
       ></Transition>
 
       {/* Mobile menu */}
@@ -63,32 +63,29 @@ const Mobilemenu = () => {
             </li>
           </ul> */}
 
-
           {/* Reused */}
 
-          <div className="flex flex-col gap-x-0 md:gap-x-1 flex-grow">
+          <div className="flex flex-col gap-x-0 space-y-5 md:gap-x-1 flex-grow">
             <button
               onClick={bikeaImgHandler}
               className="hover:cursor-pointer  rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
-             >
-          Home
-           </button>
-        <button
-          onClick={modelHandler}
-          className="hover:cursor-pointer  rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
-        >
-          Model
-        </button>
+            >
+              Home
+            </button>
+            <button
+              onClick={modelHandler}
+              className="hover:cursor-pointer  rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
+            >
+              Model
+            </button>
 
-        <button
-          onClick={aboutHandler}
-          className="hover:cursor-pointer rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
-        >
-          About
-        </button>
-        
-      </div>
-      
+            <button
+              onClick={aboutHandler}
+              className="hover:cursor-pointer rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
+            >
+              About
+            </button>
+          </div>
         </div>
       </Transition>
 
@@ -100,7 +97,7 @@ const Mobilemenu = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-6 w-6 ${isOpen ? 'hidden' : 'block'}`}
+          className={`h-6 w-6 ${isOpen ? "hidden" : "block"}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -114,7 +111,7 @@ const Mobilemenu = () => {
         </svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-6 w-6 ${isOpen ? 'block' : 'hidden'}`}
+          className={`h-6 w-6 ${isOpen ? "block" : "hidden"}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -132,4 +129,3 @@ const Mobilemenu = () => {
 };
 
 export default Mobilemenu;
-
