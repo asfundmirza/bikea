@@ -1,12 +1,22 @@
 import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Backdrop from "@mui/material/Backdrop";
+import "./UserMenu.css";
 
 const Mobilemenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [open, setOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+    setOpen(false);
   };
 
   let navigate = useNavigate();
@@ -16,114 +26,66 @@ const Mobilemenu = () => {
   const aboutHandler = () => {
     navigate("/about");
   };
-  const bikeaImgHandler = () => {
-    navigate("/home");
-  };
 
   return (
-    <div className="relative inset-0 flex z-100">
-      {/* Background overlay */}
-      <Transition
-        show={isOpen}
-        enter="transition-opacity ease-linear duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity ease-linear duration-300"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className="fixed inset-0  bg-black opacity-50"
-        aria-hidden={isOpen ? "false" : "true"}
-        onClick={toggleMenu}
-      ></Transition>
-
-      {/* Mobile menu */}
-      <Transition
-        show={isOpen}
-        enter="transform translate-x-full transition-transform duration-300 ease-in-out"
-        enterFrom="translate-x-full"
-        enterTo="translate-x-0"
-        leave="transform translate-x-full transition-transform duration-300 ease-in-out"
-        leaveFrom="translate-x-0"
-        leaveTo="translate-x-full"
-        className="fixed inset-y-0 right-0 w-64 h-[40%] bg-white shadow-lg overflow-y-auto"
-        role="dialog"
-        aria-modal="true"
+    <div>
+      <MenuIcon
+        fontSize="large"
+        className="hover:cursor-pointer"
+        onClick={handleClick}
+      />
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            width: "200px",
+            // height: "200px",
+            paddingTop: "15px",
+            paddingBottom: "15px",
+            border: "1px solid white",
+            borderRadius: "10px",
+          },
+        }}
       >
-        <div className="flex flex-col justify-center py-20 items-center align-middle">
-          {/* Your menu items go here */}
-          {/* <ul>
-            <li>
-              <a href="#">Menu Item 1</a>
-            </li>
-            <li>
-              <a href="#">Menu Item 2</a>
-            </li>
-            <li>
-              <a href="#">Menu Item 3</a>
-            </li>
-          </ul> */}
-
-          {/* Reused */}
-
-          <div className="flex flex-col gap-x-0 space-y-5 md:gap-x-1 flex-grow">
-            <button
-              onClick={bikeaImgHandler}
-              className="hover:cursor-pointer  rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
-            >
-              Home
-            </button>
-            <button
-              onClick={modelHandler}
-              className="hover:cursor-pointer  rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
-            >
-              Model
-            </button>
-
-            <button
-              onClick={aboutHandler}
-              className="hover:cursor-pointer rounded-lg px-4 py-2 md:py-1 transition-all duration-100"
-            >
-              About
-            </button>
-          </div>
-        </div>
-      </Transition>
-
-      {/* Hamburger icon */}
-      <button
-        onClick={toggleMenu}
-        className="relative  z-50 p-2 rounded-md"
-        aria-label="Toggle mobile menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={`h-6 w-6 ${isOpen ? "hidden" : "block"}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <MenuItem
+          onClick={() => {
+            handleClose();
+          }}
+          className="centeredMenuItem"
+          sx={{ fontSize: "20px" }}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className={`h-6 w-6 ${isOpen ? "block" : "hidden"}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+          Name
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            modelHandler();
+          }}
+          className="centeredMenuItem"
+          sx={{ fontSize: "20px" }}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
+          Modal
+        </MenuItem>
+
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            aboutHandler();
+          }}
+          className="centeredMenuItem"
+          sx={{ fontSize: "20px" }}
+        >
+          About
+        </MenuItem>
+      </Menu>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+      ></Backdrop>
     </div>
   );
 };
