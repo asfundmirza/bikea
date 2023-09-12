@@ -42,10 +42,10 @@ const ModalPage = () => {
                 {product.title}
               </h1>
 
-              <div className="flex flex-col md:flex-row mt-1 md:mt-14  px-1">
+              <div className="flex flex-col md:flex-row mt-1 md:mb-12   px-1 md:pr-3">
                 {/* Aero bike description */}
 
-                <div className="flex flex-col mt-8 px-5 gap-3">
+                <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3">
                   <div className="flex flex-col ">
                     <p className="leading-tight">
                       <span className="font-bold">Battery Timing:</span>
@@ -108,7 +108,7 @@ const ModalPage = () => {
                       alt="battery "
                       width={50}
                       height={50}
-                      className="w-[100px] h-[30px]"
+                      className="w-[100px] h-[40px]"
                     />
                     <p className=" text-sm text-center">60 Km</p>
                     <p className="text-gray-400 text-sm">Power</p>
@@ -119,7 +119,7 @@ const ModalPage = () => {
                       alt="battery"
                       width={50}
                       height={50}
-                      className="w-[100px] h-[30px]"
+                      className="w-[100px] h-[40px]"
                     />
                     <p className=" text-sm text-center">40 Km/h</p>
                     <p className="text-gray-400 text-sm">Speed</p>
@@ -130,7 +130,7 @@ const ModalPage = () => {
                       alt="battery "
                       width={50}
                       height={50}
-                      className="w-[100px] h-[30px]"
+                      className="w-[100px] h-[40px]"
                     />
                     <p className=" text-sm text-center">140 kg</p>
                     <p className="text-gray-400 text-sm">Load</p>
@@ -163,7 +163,7 @@ const ModalPage = () => {
         ) : (
           <div
             key={product.id}
-            className="flex flex-col-reverse md:flex-row mt-10 mb-10"
+            className="flex flex-col-reverse md:flex-row mt-10 md:mb-0 mb-10"
           >
             {/* Aero Bike X  */}
 
@@ -172,8 +172,8 @@ const ModalPage = () => {
                 {product.title}
               </h1>
 
-              <div className="flex flex-col md:flex-row mt-1 md:mt-14  px-1">
-                <div className="flex flex-col mt-5 px-5 gap-3">
+              <div className="flex flex-col md:flex-row mt-1 md:mb-12  px-1 md:pr-3">
+                <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3">
                   <div className="flex flex-col ">
                     <p className="leading-tight">
                       <span className="font-bold">Battery Timing:</span>
@@ -206,7 +206,7 @@ const ModalPage = () => {
                     </p>
                   </div>
 
-                  {/* Aero bike X icons for web */}
+                  {/* Aero bike X cart for web */}
 
                   <div className="hidden md:block flex-col mt-5 gap-3">
                     <p className="font-bold">
@@ -236,7 +236,7 @@ const ModalPage = () => {
                       alt="battery "
                       width={50}
                       height={50}
-                      className="w-[100px] h-[30px]"
+                      className="w-[100px] h-[40px]"
                     />
                     <p className=" text-sm text-center">80 Km</p>
                     <p className="text-gray-400 text-sm">Power</p>
@@ -247,7 +247,7 @@ const ModalPage = () => {
                       alt="battery"
                       width={50}
                       height={50}
-                      className="w-[100px] h-[30px]"
+                      className="w-[100px] h-[40px]"
                     />
                     <p className=" text-sm text-center">50 Km/h</p>
                     <p className="text-gray-400 text-sm">Speed</p>
@@ -258,7 +258,7 @@ const ModalPage = () => {
                       alt="battery "
                       width={50}
                       height={50}
-                      className="w-[100px] h-[30px]"
+                      className="w-[100px] h-[40px]"
                     />
                     <p className=" text-sm text-center">150 kg</p>
                     <p className="text-gray-400 text-sm">Load</p>

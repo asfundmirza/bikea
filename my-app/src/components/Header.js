@@ -84,7 +84,7 @@ const Header = () => {
               onClick={cartHandler}
             />
             {totalCartItems > 0 ? (
-              <p className="absolute bottom-5 left-0.5 bg-buttonGreen text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center z-[-1]">
+              <p className="absolute bottom-5 left-1 bg-buttonGreen text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center z-[-1]">
                 {totalCartItems}
               </p>
             ) : null}
@@ -106,6 +106,8 @@ const Header = () => {
                   height: "150px",
                   paddingTop: "20px",
                   paddingBottom: "20px",
+                  border: "1px solid white",
+                  borderRadius: "10px",
                 },
               }}
             >
@@ -145,16 +147,16 @@ const Header = () => {
 
         {/* cart &Menu */}
 
-        <div className="flex justify-end space-x-5 items-center ">
+        <div className="flex  justify-end space-x-5 items-center ">
           <div className="relative">
             <ShoppingCartIcon
-              fontSize="small"
+              fontSize="medium"
               className="hover:cursor-pointer z-10"
               onClick={cartHandler}
             />
             {totalCartItems > 0 ? (
-              <p className="absolute bottom-4 left-0.5 bg-buttonGreen text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center z-[-1]">
-                {totalCartItems}
+              <p className="absolute bottom-5 left-1.5 bg-buttonGreen rounded-full h-3 w-3 flex items-center justify-center z-[-1]">
+                {""}
               </p>
             ) : null}
           </div>
