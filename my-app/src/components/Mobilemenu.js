@@ -52,24 +52,28 @@ const Mobilemenu = (props) => {
         onClose={handleClose}
         PaperProps={{
           style: {
-            width: "200px",
+            // width: "150px",
             // height: "200px",
             paddingTop: "15px",
             paddingBottom: "15px",
+            paddingLeft: "15px",
             border: "1px solid white",
             borderRadius: "10px",
           },
         }}
       >
-        <MenuItem
-          onClick={() => {
-            handleClose();
-          }}
-          className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
-        >
-          {props.userName}
-        </MenuItem>
+        {props.userName && (
+          <MenuItem
+            onClick={() => {
+              handleClose();
+            }}
+            className="centeredMenuItem"
+            sx={{ fontSize: "20px" }}
+          >
+            {props.userName}
+          </MenuItem>
+        )}
+
         <MenuItem
           onClick={() => {
             handleClose();
@@ -98,7 +102,7 @@ const Mobilemenu = (props) => {
           className="centeredMenuItem"
           sx={{ fontSize: "20px" }}
         >
-          Sign out
+          {props.userName ? "Sign out" : "Sign in"}
         </MenuItem>
       </Menu>
       <Backdrop

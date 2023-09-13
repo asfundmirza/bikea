@@ -16,7 +16,7 @@ const Signin = () => {
   let navigate = useNavigate();
   useEffect(() => {
     const storedUser = localStorage.getItem("E-bike-users");
-    console.log(storedUser);
+
     if (storedUser) {
       navigate("/home");
     }
@@ -31,7 +31,6 @@ const Signin = () => {
       );
 
       const user = userCredential.user;
-      console.log(user);
       localStorage.setItem(
         "E-bike-users",
         JSON.stringify({
@@ -97,7 +96,7 @@ const Signin = () => {
                     type="email"
                     autoComplete="email"
                     required
-                    className="block w-full rounded-md font-body border-0 py-2.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-buttonGreen focus:ring-customGreen text-xl sm:leading-6"
+                    className="block w-full rounded-md font-body border-0 py-2.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-buttonGreen focus:ring-customGreen text-lg sm:leading-6"
                   />
                   {firebaseError &&
                   firebaseError.includes("auth/user-not-found") ? (
@@ -153,9 +152,17 @@ const Signin = () => {
             </form>
 
             <p className="mt-10 text-center text-sm text-gray-500 font-body">
-              Don,t have an account?{" "}
+              Don't have an account?{" "}
               <Link to={"/sign-up"}>
                 <span className="text-buttonGreen font-semibold">Sign up</span>
+              </Link>
+            </p>
+            <p className="mt-14 text-center text-xl text-gray-500 font-body">
+              Visit our website?{" "}
+              <Link to={"/home"}>
+                <span className="text-buttonGreen font-semibold">
+                  Click here
+                </span>
               </Link>
             </p>
           </div>

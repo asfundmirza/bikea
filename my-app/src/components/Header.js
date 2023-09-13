@@ -121,10 +121,12 @@ const Header = ({ children }) => {
               onClose={handleClose}
               PaperProps={{
                 style: {
-                  width: "150px",
-                  height: "150px",
-                  paddingTop: "20px",
-                  paddingBottom: "20px",
+                  // width: "130px",
+                  // height: "150px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                  paddingLeft: "10px",
+
                   border: "1px solid white",
                   borderRadius: "10px",
                 },
