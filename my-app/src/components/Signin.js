@@ -1,9 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Bikeimage from "../images/Bike.svg";
 import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase-config";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
-  const style = { width: "600px" };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(false);
+  const [isValidPass, setIsValidPass] = useState(false);
+  const [isWrongEmail, setIsWrongEmail] = useState(false);
+  const [isWrongPass, setIsWrongPass] = useState(false);
+  const [firebaseError, setFirebaseError] = useState("");
+  let navigate = useNavigate();
+  useEffect(() => {
+    const storedUser = localStorage.getItem("E-bike-users");
+    console.log(storedUser);
+    if (storedUser) {
+      navigate("/home");
+    }
+  }, []);
+
+  const login = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+      console.log(user);
+      localStorage.setItem(
+        "E-bike-users",
+        JSON.stringify({
+          email: user.email,
+          uid: user.uid,
+          name: user.displayName,
+        })
+      );
+
+      navigate("/home");
+    } catch (error) {
+      console.log(error.message);
+      setFirebaseError(error.message);
+    }
+  };
+
+  const emailHandler = async function (event) {
+    setEmail(event.target.value);
+    setFirebaseError("");
+  };
+  const passHandler = async (event) => {
+    setPassword(event.target.value);
+    setFirebaseError("");
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await login();
+  };
   return (
     <>
       <div className="Main flex flex-row w-full h-[100vh]">
@@ -17,7 +74,12 @@ const Signin = () => {
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full md:max-w-lg sm:max-w-xl">
-            <form className="space-y-12" action="#" method="POST">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-12"
+              action="#"
+              method="POST"
+            >
               {/* Email Address */}
 
               <div>
@@ -31,11 +93,20 @@ const Signin = () => {
                   <input
                     id="email"
                     name="email"
+                    onChange={emailHandler}
                     type="email"
                     autoComplete="email"
                     required
-                    className="block w-full rounded-md font-body border-0 py-2.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-buttonGreen focus:ring-customGreen sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md font-body border-0 py-2.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-buttonGreen focus:ring-customGreen text-xl sm:leading-6"
                   />
+                  {firebaseError &&
+                  firebaseError.includes("auth/user-not-found") ? (
+                    <span className="block mt-1 text-sm text-red-500">
+                      Invalid Email
+                    </span>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
 
@@ -54,11 +125,20 @@ const Signin = () => {
                   <input
                     id="password"
                     name="password"
+                    onChange={passHandler}
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="block w-full rounded-md border-0 font-body py-2.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-buttonGreen focus:ring-customGreen sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 font-body py-2.5 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-buttonGreen focus:ring-customGreen text-2xl sm:leading-6"
                   />
+                  {firebaseError &&
+                  firebaseError.includes("auth/wrong-password") ? (
+                    <span className="block mt-1 text-sm text-red-500">
+                      Wrong Password
+                    </span>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
 
@@ -75,7 +155,7 @@ const Signin = () => {
             <p className="mt-10 text-center text-sm text-gray-500 font-body">
               Don,t have an account?{" "}
               <Link to={"/sign-up"}>
-                <span className="text-buttonGreen">Sign up</span>
+                <span className="text-buttonGreen font-semibold">Sign up</span>
               </Link>
             </p>
           </div>
@@ -85,7 +165,7 @@ const Signin = () => {
 
         <div className="imagesection hidden  md:flex justify-center w-1/2 align-center ">
           <div className="w-full bg-customGreen flex justify-center align-center">
-            <img src={Bikeimage} alt="Bikeimage" style={style} />
+            <img src={Bikeimage} alt="Bikeimage" width={600} />
           </div>
         </div>
       </div>
