@@ -15,7 +15,6 @@ const App = () => {
   return (
     <CartProvider>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/sign-in" element={<Signin />} />

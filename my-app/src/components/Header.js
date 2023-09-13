@@ -11,7 +11,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import "./UserMenu.css";
 
-const Header = () => {
+const Header = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const cart = useContext(CartContext);
 
@@ -166,6 +166,7 @@ const Header = () => {
           {/* <p>My Account</p> */}
         </div>
       </div>
+      {children}
     </>
   );
 };
