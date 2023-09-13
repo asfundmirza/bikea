@@ -9,6 +9,7 @@ import CartProvider from "./CartContext";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/home" element={<HomePage />} />
           <Route path="/sign-in" element={<Signin />} />
+          <Route path="/sign-up" element={<Signup />} />
           <Route path="/model" element={<ModalPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<CartPage />} />

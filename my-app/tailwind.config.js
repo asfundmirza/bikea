@@ -8,6 +8,10 @@ module.exports = {
         customGreen: "#B6F2CA",
         buttonGreen: "#6BDC92",
       },
+      fontFamily: {
+        'heading' : " Bebas Neue ",
+        'body' : " Montserrat  "
+      }
     },
   },
   plugins: [],
