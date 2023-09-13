@@ -31,8 +31,11 @@ const Header = ({ children }) => {
   useEffect(() => {
     let storedUser = localStorage.getItem("E-bike-users");
 
+    if (!storedUser) {
+      navigate("/sign-in");
+    }
+
     storedUser = JSON.parse(storedUser);
-    console.log(storedUser);
     if (storedUser) {
       setUserName(storedUser.name);
     }
