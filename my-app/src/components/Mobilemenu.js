@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Backdrop from "@mui/material/Backdrop";
 import "./UserMenu.css";
+import { signOut } from "@firebase/auth";
+import { auth } from "../Firebase-config";
 
-const Mobilemenu = () => {
+const Mobilemenu = (props) => {
+  let navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
 
@@ -18,8 +21,16 @@ const Mobilemenu = () => {
     setAnchorEl(null);
     setOpen(false);
   };
+  const signoutHandler = async () => {
+    setAnchorEl(null);
+    setOpen(false);
+    localStorage.removeItem("E-bike-users");
 
-  let navigate = useNavigate();
+    await signOut(auth);
+
+    navigate("/sign-in");
+  };
+
   const modelHandler = () => {
     navigate("/model");
   };
@@ -41,24 +52,28 @@ const Mobilemenu = () => {
         onClose={handleClose}
         PaperProps={{
           style: {
-            width: "200px",
+            // width: "150px",
             // height: "200px",
             paddingTop: "15px",
             paddingBottom: "15px",
+            paddingLeft: "15px",
             border: "1px solid white",
             borderRadius: "10px",
           },
         }}
       >
-        <MenuItem
-          onClick={() => {
-            handleClose();
-          }}
-          className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
-        >
-          Name
-        </MenuItem>
+        {props.userName && (
+          <MenuItem
+            onClick={() => {
+              handleClose();
+            }}
+            className="centeredMenuItem"
+            sx={{ fontSize: "20px" }}
+          >
+            {props.userName}
+          </MenuItem>
+        )}
+
         <MenuItem
           onClick={() => {
             handleClose();
@@ -79,6 +94,15 @@ const Mobilemenu = () => {
           sx={{ fontSize: "20px" }}
         >
           About
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            signoutHandler();
+          }}
+          className="centeredMenuItem"
+          sx={{ fontSize: "20px" }}
+        >
+          {props.userName ? "Sign out" : "Sign in"}
         </MenuItem>
       </Menu>
       <Backdrop

@@ -4,8 +4,8 @@ import batteryImage from "../images/battery icon.svg";
 import speedImage from "../images/speed icon.svg";
 import weightImage from "../images/weight icon.svg";
 import { productsArray } from "../ProductStore";
-import { getProductsData } from "../ProductStore";
 import { CartContext } from "../CartContext";
+import Header from './Header'
 
 const ModalPage = () => {
   const [showMessage, setShowMessage] = useState(false);
@@ -19,6 +19,7 @@ const ModalPage = () => {
   };
 
   return (
+    <Header>
     <div className="pt-12">
       {productsArray.map((product) =>
         product.id === "price_1NodRWAdcivc1ys1jTk6jgp4" ? (
@@ -295,6 +296,7 @@ const ModalPage = () => {
         )
       )}
     </div>
+    </Header>
   );
 };
 

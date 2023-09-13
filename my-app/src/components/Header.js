@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import bikeaLogo from "../images/bikea-01.svg";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -10,9 +10,12 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import "./UserMenu.css";
+import { signOut } from "@firebase/auth";
+import { auth } from "../Firebase-config";
 
-const Header = () => {
+const Header = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [userName, setUserName] = useState("");
   const cart = useContext(CartContext);
 
   const productQuantity = productsArray.map((product) => {
@@ -25,13 +28,29 @@ const Header = () => {
   );
 
   let navigate = useNavigate();
+  useEffect(() => {
+    let storedUser = localStorage.getItem("E-bike-users");
 
-  // const open = Boolean(anchorEl);
+    storedUser = JSON.parse(storedUser);
+    console.log(storedUser);
+    if (storedUser) {
+      setUserName(storedUser.name);
+    }
+  }, []);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = async () => {
     setAnchorEl(null);
+  };
+  const signoutHandler = async () => {
+    setAnchorEl(null);
+    localStorage.removeItem("E-bike-users");
+
+    await signOut(auth);
+
+    navigate("/sign-in");
   };
 
   const modelHandler = () => {
@@ -102,29 +121,33 @@ const Header = () => {
               onClose={handleClose}
               PaperProps={{
                 style: {
-                  width: "150px",
-                  height: "150px",
-                  paddingTop: "20px",
-                  paddingBottom: "20px",
+                  // width: "130px",
+                  // height: "150px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                  paddingLeft: "10px",
+
                   border: "1px solid white",
                   borderRadius: "10px",
                 },
               }}
             >
-              <MenuItem
-                onClick={handleClose}
-                className="centeredMenuItem"
-                sx={{ fontSize: "20px" }}
-              >
-                Profile
-              </MenuItem>
+              {userName && (
+                <MenuItem
+                  onClick={handleClose}
+                  className="centeredMenuItem"
+                  sx={{ fontSize: "20px" }}
+                >
+                  {userName}
+                </MenuItem>
+              )}
 
               <MenuItem
-                onClick={handleClose}
+                onClick={signoutHandler}
                 className="centeredMenuItem"
                 sx={{ fontSize: "20px" }}
               >
-                Logout
+                {userName ? "Sign out" : "Sign in"}
               </MenuItem>
             </Menu>
           </div>
@@ -161,11 +184,10 @@ const Header = () => {
             ) : null}
           </div>
 
-          <Mobilemenu />
-
-          {/* <p>My Account</p> */}
+          <Mobilemenu userName={userName} />
         </div>
       </div>
+      {children}
     </>
   );
 };
