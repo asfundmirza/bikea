@@ -57,7 +57,8 @@ const Signin = () => {
     setFirebaseError("");
   };
   const bypassHandler = () => {
-    setBypassSignIn(true);
+    localStorage.setItem("E-bike-users", JSON.stringify({ name: "Guest" }));
+    navigate("/home");
   };
 
   const handleSubmit = async (event) => {

@@ -7,7 +7,7 @@ const About = () => {
   let navigate = useNavigate();
 
   return (
-    <Header>
+    <Header isVisible={true}>
       <div className="flex flex-col pt-12">
         {/* About Header */}
 

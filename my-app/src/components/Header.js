@@ -14,7 +14,7 @@ import { signOut } from "@firebase/auth";
 import { auth } from "../Firebase-config";
 import { useLocation } from "react-router-dom";
 
-const Header = ({ children }) => {
+const Header = ({ children, isVisible }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userName, setUserName] = useState("");
   const [activeButton, setActiveButton] = useState(null);
@@ -32,20 +32,21 @@ const Header = ({ children }) => {
 
   let navigate = useNavigate();
   let location = useLocation();
+
   useEffect(() => {
     let storedUser = localStorage.getItem("E-bike-users");
 
-    if (!storedUser && !bypassSignIn) {
-      navigate("/sign-in");
-    } else if (location.pathname === "/sign-in") {
-      navigate("/home");
-    }
+    // if (!storedUser && !bypassSignIn) {
+    //   navigate("/sign-in");
+    // } else if (location.pathname === "/sign-in") {
+    //   navigate("/home");
+    // }
 
     storedUser = JSON.parse(storedUser);
     if (storedUser) {
       setUserName(storedUser.name);
     }
-  }, [bypassSignIn, location.pathname]);
+  }, []);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -87,6 +88,10 @@ const Header = ({ children }) => {
         setActiveButton(null);
     }
   }, [location.pathname]);
+
+  if (!isVisible) {
+    return <>{children}</>;
+  }
   return (
     <>
       <div className="flex w-full p-3 h-[3rem] fixed top-0 left-0 z-50  bg-white shadow-md items-center justify-between px-8 ">
@@ -104,9 +109,7 @@ const Header = ({ children }) => {
           <button
             onClick={modelHandler}
             className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
-              activeButton === "model"
-                ? "bg-customGreen"
-                : "hover:bg-customGreen"
+              activeButton === "model" ? "bg-customGreen" : ""
             }`}
           >
             Model
@@ -115,9 +118,7 @@ const Header = ({ children }) => {
           <button
             onClick={aboutHandler}
             className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
-              activeButton === "about"
-                ? "bg-customGreen"
-                : "hover:bg-customGreen"
+              activeButton === "about" ? "bg-customGreen" : ""
             }`}
           >
             About
@@ -152,8 +153,8 @@ const Header = ({ children }) => {
                 style: {
                   // width: "130px",
                   // height: "150px",
-                  paddingTop: "10px",
-                  paddingBottom: "10px",
+                  paddingTop: "5px",
+                  paddingBottom: "5px",
                   paddingLeft: "5px",
                   paddingRight: "5px",
 
@@ -168,7 +169,7 @@ const Header = ({ children }) => {
                   className="centeredMenuItem noHover"
                   sx={{ fontSize: "20px" }}
                 >
-                  {userName}
+                  {userName !== "Guest" ? userName : null}
                 </MenuItem>
               )}
 
@@ -177,7 +178,7 @@ const Header = ({ children }) => {
                 className="centeredMenuItem"
                 sx={{ fontSize: "20px" }}
               >
-                {userName ? "Sign out" : "Sign in"}
+                {userName !== "Guest" ? "Sign out" : "Sign in"}
               </MenuItem>
             </Menu>
           </div>
