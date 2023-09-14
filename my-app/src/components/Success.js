@@ -2,9 +2,7 @@ import React from "react";
 import Confetti from "../animations/confetti.gif";
 import Thanks from "../images/thanks.svg";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 const Success = () => {
-  let navigate = useNavigate();
   return (
     <div className="w-full h-[100vh] pt-12">
       {/* Button */}
@@ -30,7 +28,7 @@ const Success = () => {
 
       {/* Order confirmation */}
       <div className=" absolute bottom-0 right-0 flex w-full flex-col items-center py-[3rem] md:py-[3rem] px-2 md:px-0 justify-center bg-customGreen space-y-2">
-        <h1 className="font-heading text-3xl md:text-5xl tracking-[0.3rem] md:tracking=[0.6rem]">
+        <h1 className="font-heading text-3xl md:text-5xl text-center tracking-[0.3rem] md:tracking=[0.6rem]">
           Your order is placed
         </h1>
         <h2 className="font-body font-medium text-md text-center md:text-xl ">
