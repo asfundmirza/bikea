@@ -14,38 +14,40 @@ const About = () => {
         <div className="flex  bg-customGreen p-4 py-8 ">
           <div className="flex flex-auto flex-col gap-12">
             <div className="flex mt-5   justify-center ">
-              <p className="font-bold text-4xl md:text-6xl">About</p>
+              <h1 className="font-bold text-4xl font-heading tracking-[0.9rem] md:text-6xl">
+                About
+              </h1>
             </div>
             <div className="flex justify-evenly space-x-4 md:space-x-2 px-6 ">
               <div className="flex flex-col justify-center gap-4">
-                <p className="font-bold text-sm  md:text-xl leading-tight ">
+                <p className="font-bold  text-sm  md:text-2xl leading-tight ">
                   Founded in
                   <br />
                   2010
                 </p>
-                <p className="font-light text-xs md:text-lg leading-tight">
+                <p className="font-regular text-xs md:text-lg leading-tight">
                   Over a decade of delighting
                   <br /> customers
                 </p>
               </div>
               <div className="flex flex-col justify-center gap-4">
-                <p className="font-bold text-sm md:text-xl leading-tight ">
+                <p className="font-bold text-sm md:text-2xl leading-tight ">
                   Premium
                   <br />
                   Quality
                 </p>
-                <p className="font-light text-xs md:text-lg leading-tight">
+                <p className="font-regular text-xs md:text-lg leading-tight">
                   For people that refuse to
                   <br /> settle for less
                 </p>
               </div>
               <div className="flex flex-col justify-center gap-4">
-                <p className="font-bold text-sm md:text-xl leading-tight">
+                <p className="font-bold text-sm md:text-2xl leading-tight">
                   Affordable
                   <br />
                   Price
                 </p>
-                <p className="font-light text-xs md:text-lg leading-tight">
+                <p className="font-regular text-xs md:text-lg leading-tight">
                   Best price for this quality
                   <br /> bikes
                 </p>
@@ -58,7 +60,9 @@ const About = () => {
 
         <div className="flex  mt-4 md:mt-7 flex-col md:flex-row gap-12 p-5 md:px-9">
           <div className="flex flex-col mt-5 justify-center items-center md:items-start gap-3 flex-1">
-            <p className="font-bold text-2xl md:text-4xl">History</p>
+            <p className="font-bold font-heading tracking-[0.3rem] text-2xl md:text-4xl">
+              History
+            </p>
             <p className="text-xs md:text-base leading-tight">
               Bikea was founded in 2010 to be the very best brand of electric
               bikes on Earth, not necessarily the biggest.

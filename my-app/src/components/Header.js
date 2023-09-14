@@ -109,7 +109,9 @@ const Header = ({ children, isVisible }) => {
           <button
             onClick={modelHandler}
             className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
-              activeButton === "model" ? "bg-customGreen" : ""
+              activeButton === "model"
+                ? "bg-customGreen"
+                : "hover:bg-customGreen"
             }`}
           >
             Model
@@ -118,7 +120,9 @@ const Header = ({ children, isVisible }) => {
           <button
             onClick={aboutHandler}
             className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
-              activeButton === "about" ? "bg-customGreen" : ""
+              activeButton === "about"
+                ? "bg-customGreen"
+                : "hover:bg-customGreen"
             }`}
           >
             About
