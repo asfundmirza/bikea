@@ -17,6 +17,7 @@ import { useLocation } from "react-router-dom";
 const Header = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userName, setUserName] = useState("");
+  const [activeButton, setActiveButton] = useState(null);
   const cart = useContext(CartContext);
   const { bypassSignIn } = useContext(CartContext);
 
@@ -48,6 +49,7 @@ const Header = ({ children }) => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    setActiveButton(null);
   };
   const handleClose = async () => {
     setAnchorEl(null);
@@ -73,7 +75,18 @@ const Header = ({ children }) => {
   const cartHandler = () => {
     navigate("/cart");
   };
-
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/model":
+        setActiveButton("model");
+        break;
+      case "/about":
+        setActiveButton("about");
+        break;
+      default:
+        setActiveButton(null);
+    }
+  }, [location.pathname]);
   return (
     <>
       <div className="flex w-full p-3 h-[3rem] fixed top-0 left-0 z-50  bg-white shadow-md items-center justify-between px-8 ">
@@ -90,14 +103,22 @@ const Header = ({ children }) => {
         <div className="flex justify-center gap-x-0 md:gap-x-1 flex-grow">
           <button
             onClick={modelHandler}
-            className="hover:cursor-pointer hover:bg-customGreen  rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100"
+            className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
+              activeButton === "model"
+                ? "bg-customGreen"
+                : "hover:bg-customGreen"
+            }`}
           >
             Model
           </button>
 
           <button
             onClick={aboutHandler}
-            className="hover:cursor-pointer hover:bg-customGreen  rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100"
+            className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
+              activeButton === "about"
+                ? "bg-customGreen"
+                : "hover:bg-customGreen"
+            }`}
           >
             About
           </button>
