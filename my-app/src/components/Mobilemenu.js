@@ -66,10 +66,7 @@ const Mobilemenu = (props) => {
       >
         {props.userName && (
           <MenuItem
-            onClick={() => {
-              handleClose();
-            }}
-            className="centeredMenuItem"
+            className="centeredMenuItem noHover"
             sx={{ fontSize: "20px" }}
           >
             {props.userName}

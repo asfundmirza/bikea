@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import "./UserMenu.css";
 import { signOut } from "@firebase/auth";
 import { auth } from "../Firebase-config";
+import { useLocation } from "react-router-dom";
 
 const Header = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -29,12 +30,13 @@ const Header = ({ children }) => {
   );
 
   let navigate = useNavigate();
+  let location = useLocation();
   useEffect(() => {
     let storedUser = localStorage.getItem("E-bike-users");
 
     if (!storedUser && !bypassSignIn) {
       navigate("/sign-in");
-    } else {
+    } else if (location.pathname === "/sign-in") {
       navigate("/home");
     }
 
@@ -42,7 +44,7 @@ const Header = ({ children }) => {
     if (storedUser) {
       setUserName(storedUser.name);
     }
-  }, []);
+  }, [bypassSignIn, location.pathname]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -135,14 +137,14 @@ const Header = ({ children }) => {
                   paddingRight: "5px",
 
                   border: "1px solid white",
-                  borderRadius: "10px",
+                  borderRadius: "4px",
                 },
               }}
             >
               {userName && (
                 <MenuItem
-                  onClick={handleClose}
-                  className="centeredMenuItem"
+                  // onClick={handleClose}
+                  className="centeredMenuItem noHover"
                   sx={{ fontSize: "20px" }}
                 >
                   {userName}
