@@ -54,8 +54,8 @@ const Mobilemenu = (props) => {
           style: {
             // width: "150px",
             // height: "200px",
-            paddingTop: "15px",
-            paddingBottom: "15px",
+            paddingTop: "5px",
+            paddingBottom: "5px",
             paddingLeft: "5px",
             paddingRight: "5px",
 
@@ -69,7 +69,7 @@ const Mobilemenu = (props) => {
             className="centeredMenuItem noHover"
             sx={{ fontSize: "20px" }}
           >
-            {props.userName}
+            {props.userName !== "Guest" ? props.userName : ""}
           </MenuItem>
         )}
 
@@ -101,7 +101,7 @@ const Mobilemenu = (props) => {
           className="centeredMenuItem"
           sx={{ fontSize: "20px" }}
         >
-          {props.userName ? "Sign out" : "Sign in"}
+          {props.userName !== "Guest" ? "Sign out" : "Sign in"}
         </MenuItem>
       </Menu>
       <Backdrop

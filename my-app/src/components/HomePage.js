@@ -5,7 +5,7 @@ import Herocard from "./Herocard";
 import Header from "./Header";
 const HomePage = () => {
   return (
-    <Header>
+    <Header isVisible={true}>
       <div>
         {/* Aero Bike Homepage Card */}
 

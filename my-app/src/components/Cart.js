@@ -32,7 +32,7 @@ const Cart = () => {
 
   console.log(productQuantity);
   return (
-    <Header>
+    <Header isVisible={true}>
       <div className="flex flex-col md:flex-row w-screen h-[100vh] pt-12 m-0 ">
         {/* white section */}
 
