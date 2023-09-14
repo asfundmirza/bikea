@@ -56,9 +56,11 @@ const Mobilemenu = (props) => {
             // height: "200px",
             paddingTop: "15px",
             paddingBottom: "15px",
-            paddingLeft: "15px",
+            paddingLeft: "5px",
+            paddingRight: "5px",
+
             border: "1px solid white",
-            borderRadius: "10px",
+            borderRadius: "4px",
           },
         }}
       >

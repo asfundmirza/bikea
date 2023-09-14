@@ -17,6 +17,7 @@ const Header = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userName, setUserName] = useState("");
   const cart = useContext(CartContext);
+  const { bypassSignIn } = useContext(CartContext);
 
   const productQuantity = productsArray.map((product) => {
     const cartItems = cart.getProductQuantity(product.id);
@@ -31,8 +32,10 @@ const Header = ({ children }) => {
   useEffect(() => {
     let storedUser = localStorage.getItem("E-bike-users");
 
-    if (!storedUser) {
+    if (!storedUser && !bypassSignIn) {
       navigate("/sign-in");
+    } else {
+      navigate("/home");
     }
 
     storedUser = JSON.parse(storedUser);
@@ -128,7 +131,8 @@ const Header = ({ children }) => {
                   // height: "150px",
                   paddingTop: "10px",
                   paddingBottom: "10px",
-                  paddingLeft: "10px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
 
                   border: "1px solid white",
                   borderRadius: "10px",
