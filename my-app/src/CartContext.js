@@ -13,6 +13,7 @@ export const CartContext = createContext({
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
+  const [bypassSignIn, setBypassSignIn] = useState(false);
 
   function getProductQuantity(id) {
     const quantity = cartItems.find((product) => product.id === id)?.quantity;
@@ -84,6 +85,8 @@ export function CartProvider({ children }) {
     removeOneFromCart,
     deleteFromCart,
     getTotalCost,
+    bypassSignIn,
+    setBypassSignIn,
   };
 
   return (

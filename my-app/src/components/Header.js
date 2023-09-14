@@ -12,11 +12,14 @@ import MenuItem from "@mui/material/MenuItem";
 import "./UserMenu.css";
 import { signOut } from "@firebase/auth";
 import { auth } from "../Firebase-config";
+import { useLocation } from "react-router-dom";
 
 const Header = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userName, setUserName] = useState("");
+  const [activeButton, setActiveButton] = useState(null);
   const cart = useContext(CartContext);
+  const { bypassSignIn } = useContext(CartContext);
 
   const productQuantity = productsArray.map((product) => {
     const cartItems = cart.getProductQuantity(product.id);
@@ -28,18 +31,25 @@ const Header = ({ children }) => {
   );
 
   let navigate = useNavigate();
+  let location = useLocation();
   useEffect(() => {
     let storedUser = localStorage.getItem("E-bike-users");
 
+    if (!storedUser && !bypassSignIn) {
+      navigate("/sign-in");
+    } else if (location.pathname === "/sign-in") {
+      navigate("/home");
+    }
+
     storedUser = JSON.parse(storedUser);
-    console.log(storedUser);
     if (storedUser) {
       setUserName(storedUser.name);
     }
-  }, []);
+  }, [bypassSignIn, location.pathname]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    setActiveButton(null);
   };
   const handleClose = async () => {
     setAnchorEl(null);
@@ -65,7 +75,18 @@ const Header = ({ children }) => {
   const cartHandler = () => {
     navigate("/cart");
   };
-
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/model":
+        setActiveButton("model");
+        break;
+      case "/about":
+        setActiveButton("about");
+        break;
+      default:
+        setActiveButton(null);
+    }
+  }, [location.pathname]);
   return (
     <>
       <div className="flex w-full p-3 h-[3rem] fixed top-0 left-0 z-50  bg-white shadow-md items-center justify-between px-8 ">
@@ -82,14 +103,22 @@ const Header = ({ children }) => {
         <div className="flex justify-center gap-x-0 md:gap-x-1 flex-grow">
           <button
             onClick={modelHandler}
-            className="hover:cursor-pointer hover:bg-customGreen  rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100"
+            className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
+              activeButton === "model"
+                ? "bg-customGreen"
+                : "hover:bg-customGreen"
+            }`}
           >
             Model
           </button>
 
           <button
             onClick={aboutHandler}
-            className="hover:cursor-pointer hover:bg-customGreen  rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100"
+            className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
+              activeButton === "about"
+                ? "bg-customGreen"
+                : "hover:bg-customGreen"
+            }`}
           >
             About
           </button>
@@ -125,17 +154,18 @@ const Header = ({ children }) => {
                   // height: "150px",
                   paddingTop: "10px",
                   paddingBottom: "10px",
-                  paddingLeft: "10px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
 
                   border: "1px solid white",
-                  borderRadius: "10px",
+                  borderRadius: "4px",
                 },
               }}
             >
               {userName && (
                 <MenuItem
-                  onClick={handleClose}
-                  className="centeredMenuItem"
+                  // onClick={handleClose}
+                  className="centeredMenuItem noHover"
                   sx={{ fontSize: "20px" }}
                 >
                   {userName}

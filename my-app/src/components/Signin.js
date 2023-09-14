@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Bikeimage from "../images/Bike.svg";
 import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase-config";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../CartContext";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(false);
-  const [isValidPass, setIsValidPass] = useState(false);
-  const [isWrongEmail, setIsWrongEmail] = useState(false);
-  const [isWrongPass, setIsWrongPass] = useState(false);
+
   const [firebaseError, setFirebaseError] = useState("");
+
+  const { setBypassSignIn } = useContext(CartContext);
+
   let navigate = useNavigate();
   useEffect(() => {
     const storedUser = localStorage.getItem("E-bike-users");
@@ -54,6 +55,9 @@ const Signin = () => {
   const passHandler = async (event) => {
     setPassword(event.target.value);
     setFirebaseError("");
+  };
+  const bypassHandler = () => {
+    setBypassSignIn(true);
   };
 
   const handleSubmit = async (event) => {
@@ -160,7 +164,10 @@ const Signin = () => {
             <p className="mt-14 text-center text-xl text-gray-500 font-body">
               Visit our website?{" "}
               <Link to={"/home"}>
-                <span className="text-buttonGreen font-semibold">
+                <span
+                  onClick={bypassHandler}
+                  className="text-buttonGreen font-semibold"
+                >
                   Click here
                 </span>
               </Link>
