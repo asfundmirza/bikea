@@ -73,7 +73,7 @@ const About = () => {
               bikes and the culture of Bikea are both highly contagious.
               <br />
             </p>
-            <p className="text-xs md:text-base leading-tight ">
+            <p className="text-xs  md:text-base leading-tight ">
               Bikea founder Max william is a serial entrepreneur and former
               automotive industry executive. He also happens to live at the top
               of a giant hill, and that’s why he bought his first electric bike.
@@ -81,13 +81,13 @@ const About = () => {
               hill.”
               <br />
             </p>
-            <p className="hidden md:block text-xs md:text-base leading-tight">
+            <p className="hidden md:block text-xs  md:text-base leading-tight">
               His early experience as a customer got hooked on electric bikes.
               In 2008, he opened a shop in Newport Beach, CA that quickly became
               the largest electric bicycle retailer in the United States.
               <br />
             </p>
-            <p className="text-xs md:text-base leading-tight">
+            <p className="text-xs  md:text-base leading-tight">
               Soon, Max found himself frustrated and disappointed with the poor
               quality and boring style of all the electric bikes on the market.
               He dreamt of creating his own brand of electric bikes that would
