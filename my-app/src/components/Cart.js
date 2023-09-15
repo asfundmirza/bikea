@@ -32,19 +32,19 @@ const Cart = () => {
 
   console.log(productQuantity);
   return (
-    <Header>
+    <Header isVisible={true}>
       <div className="flex flex-col md:flex-row w-screen h-[100vh] pt-12 m-0 ">
         {/* white section */}
 
         <div className="flex flex-1 h-full w-auto justify-center md:justify-start px-0 ">
           <div className="flex flex-col flex-1  md:pl-7 mt-2 md:mt-[100px] justify-evenly items-center md:items-start md:justify-start">
-            <h1 className="font-bold text-3xl md:text-4xl md:mb-5">
+            <h1 className="font-bold font-heading tracking-[0.2rem] text-3xl md:text-4xl md:mb-5">
               Shopping Cart
             </h1>
 
             {productQuantity.every((qty) => qty === 0) ? (
               <div className="flex  w-full justify-center">
-                <div className="flex font-semibold md:mt-[150px] text-3xl ">
+                <div className="flex font-semibold md:mt-[150px] text-3xl font-body ">
                   Your cart is Empty!
                 </div>
               </div>
@@ -122,27 +122,27 @@ const Cart = () => {
         {/* green section */}
         <div className="flex flex-[0.6] h-full w-auto px-10  bg-customGreen">
           <div className="flex flex-col flex-auto md:mt-5 md:mb-2 justify-evenly items-center">
-            <h1 className="font-bold text-3xl md:text-4xl">Cart Total</h1>
+            <h1 className="font-bold font-heading tracking-[0.2rem] text-3xl md:text-4xl">Cart Total</h1>
             <div className="flex justify-between w-full px-5 ">
-              <h1 className="font-semibold md:text-xl text-lg">Sub Total</h1>
-              <h1 className="md:text-xl text-lg">${cart.getTotalCost()}</h1>
+              <h1 className="font-semibold font-body md:text-xl text-lg">Sub Total</h1>
+              <h1 className="md:text-xl text-lg font-body">${cart.getTotalCost()}</h1>
             </div>
             <div className="flex justify-between w-full px-5 ">
-              <h1 className="font-semibold md:text-xl text-lg">Shipping</h1>
-              <h1 className="md:text-xl text-lg">
+              <h1 className="font-semibold font-body md:text-xl text-lg">Shipping</h1>
+              <h1 className="md:text-xl text-lg font-body">
                 {cart.getTotalCost() > 0 ? "$100" : "$0"}
               </h1>
             </div>
             <div className="flex justify-between w-full px-5 ">
-              <h1 className="font-semibold md:text-xl text-lg">Total</h1>
-              <h1 className="md:text-xl text-lg">
+              <h1 className="font-semibold font-body md:text-xl text-lg">Total</h1>
+              <h1 className="md:text-xl text-lg font-body">
                 ${cart.getTotalCost() > 0 ? cart.getTotalCost() + 100 : "0"}
               </h1>
             </div>
             <div className="flex w-full justify-center  px-5">
               <button
                 onClick={checkoutHandler}
-                className="bg-black text-white px-5  text-center text-lg rounded-md  py-2"
+                className="bg-black text-white px-8  text-center text-lg rounded-[4px]  py-2 font-body"
               >
                 Proceed to checkout
               </button>

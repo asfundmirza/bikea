@@ -7,22 +7,24 @@ const About = () => {
   let navigate = useNavigate();
 
   return (
-    <Header>
+    <Header isVisible={true}>
       <div className="flex flex-col pt-12">
         {/* About Header */}
 
         <div className="flex  bg-customGreen p-4 py-8 ">
           <div className="flex flex-auto flex-col gap-12">
             <div className="flex mt-5   justify-center ">
-              <h1 className="font-bold font-heading tracking-[0.8rem] text-4xl md:text-6xl">About</h1>
+              <h1 className="font-bold text-4xl font-heading tracking-[0.9rem] md:text-6xl">
+                About
+              </h1>
             </div>
             <div className="flex justify-evenly space-x-4 md:space-x-2 px-6 ">
               <div className="flex flex-col justify-center gap-4">
-                <h1 className="font-bold font-body text-sm  md:text-2xl leading-tight ">
+                <p className="font-bold  text-sm  md:text-2xl leading-tight ">
                   Founded in
                   <br />
                   2010
-                </h1>
+                </p>
                 <p className="font-regular text-xs md:text-lg leading-tight">
                   Over a decade of delighting
                   <br /> customers
@@ -58,7 +60,9 @@ const About = () => {
 
         <div className="flex  mt-4 md:mt-7 flex-col md:flex-row gap-12 p-5 md:px-9">
           <div className="flex flex-col mt-5 justify-center items-center md:items-start gap-3 flex-1">
-            <p className="font-bold font-heading tracking-[0.2rem] text-2xl md:text-4xl">History</p>
+            <p className="font-bold font-heading tracking-[0.3rem] text-2xl md:text-4xl">
+              History
+            </p>
             <p className="text-xs md:text-base leading-tight">
               Bikea was founded in 2010 to be the very best brand of electric
               bikes on Earth, not necessarily the biggest.
