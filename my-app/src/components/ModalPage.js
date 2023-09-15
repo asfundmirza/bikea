@@ -39,17 +39,17 @@ const ModalPage = () => {
               {/* Aero Bike */}
 
               <div className="flex items-center flex-col  justify-center md:justify-start mt-5 md:mt-[100px] flex-1 md:flex-[0.9]">
-                <h1 className="font-semibold text-3xl md:text-5xl ">
+                <h1 className="font-semibold font-heading tracking-[0.3rem] text-3xl md:text-5xl ">
                   {product.title}
                 </h1>
 
                 <div className="flex flex-col md:flex-row mt-1 md:mb-12   px-1 md:pr-3">
                   {/* Aero bike description */}
 
-                  <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3">
+                  <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3 space-y-4">
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Battery Timing:</span>
+                        <span className="font-bold font-body">Battery Timing:</span>
                         The Aero Bike is equipped with a powerful lithium-ion
                         battery that offers an impressive 60 kilometers (37
                         miles) of riding on a single charge.
@@ -57,7 +57,7 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Speed:</span>
+                        <span className="font-bold font-body">Speed:</span>
                         With a top speed of 40 kilometers per hour (25 miles per
                         hour), the Aero Bike allows you to zip through urban
                         streets and bike paths with ease
@@ -65,7 +65,7 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Load Capacity:</span>
+                        <span className="font-bold font-body">Load Capacity:</span>
                         The Aero Bike boasts a robust frame and components,
                         enabling it to carry a maximum load of up to 140
                         kilograms (309 pounds).
@@ -73,7 +73,7 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Breaking System:</span>
+                        <span className="font-bold font-body">Breaking System:</span>
                         Safety is a top priority with the Aero Bike. It comes
                         equipped with a reliable and responsive braking system.
                       </p>
@@ -81,11 +81,11 @@ const ModalPage = () => {
 
                     {/* cart button for web */}
 
-                    <div className="hidden md:block  flex-col mt-5 gap-3">
-                      <p className="font-bold">
+                    <div className="hidden md:block  flex-col mt-5 gap-3 space-y-3">
+                      <p className="font-bold font-body">
                         Price:
-                        <span className="font-mono font-light">
-                          ${product.price}.00
+                        <span className="font-body font-medium">
+                           ${product.price}.00
                         </span>
                       </p>
                       <button
@@ -93,7 +93,7 @@ const ModalPage = () => {
                           cart.addOneToCart(product.id);
                           addToCartHandler();
                         }}
-                        className="bg-buttonGreen border p-1 px-6 rounded-[4px] text-center w-fit"
+                        className="bg-buttonGreen font-body font-medium border p-1 px-6 rounded-[4px] text-center w-fit"
                       >
                         Add to Cart
                       </button>
@@ -141,9 +141,9 @@ const ModalPage = () => {
                   {/* Aero cart for mobile */}
 
                   <div className="flex md:hidden justify-between mt-10 px-5">
-                    <p className="font-bold">
+                    <p className="font-bold ">
                       Price:
-                      <span className="font-mono font-light">
+                      <span className="font-body font-medium">
                         ${product.price}.00
                       </span>
                     </p>
@@ -153,7 +153,7 @@ const ModalPage = () => {
                         cart.addOneToCart(product.id);
                         addToCartHandler();
                       }}
-                      className="bg-buttonGreen border  p-1 px-3 rounded-[4px] text-center w-fit"
+                      className="bg-buttonGreen border font-body font-medium p-1 px-3 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
                     </button>
@@ -169,15 +169,15 @@ const ModalPage = () => {
               {/* Aero Bike X  */}
 
               <div className="flex items-center flex-col  justify-center md:justify-start mt-5 md:mt-[100px] flex-1 md:flex-[0.9]">
-                <h1 className="font-semibold text-3xl md:text-5xl ">
+                <h1 className="font-semibold font-heading tracking-[0.2rem] text-3xl md:text-5xl ">
                   {product.title}
                 </h1>
 
                 <div className="flex flex-col md:flex-row mt-1 md:mb-12  px-1 md:pr-3">
-                  <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3">
+                  <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3 space-y-4">
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Battery Timing:</span>
+                        <span className="font-bold font-body">Battery Timing:</span>
                         The Aero Bike is equipped with a powerful lithium-ion
                         battery that offers an impressive 80 kilometers (37
                         miles) of riding on a single charge.
@@ -185,7 +185,7 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Speed:</span>
+                        <span className="font-bold font-body">Speed:</span>
                         With a top speed of 50 kilometers per hour (25 miles per
                         hour), the Aero Bike allows you to zip through urban
                         streets and bike paths with ease
@@ -193,7 +193,7 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Load Capacity:</span>
+                        <span className="font-bold font-body">Load Capacity:</span>
                         The Aero Bike boasts a robust frame and components,
                         enabling it to carry a maximum load of up to 150
                         kilograms (309 pounds).
@@ -201,7 +201,7 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold">Breaking System:</span>
+                        <span className="font-bold font-body">Breaking System:</span>
                         Safety is a top priority with the Aero Bike X. It comes
                         equipped with a reliable and responsive braking system.
                       </p>
@@ -209,10 +209,10 @@ const ModalPage = () => {
 
                     {/* Aero bike X cart for web */}
 
-                    <div className="hidden md:block flex-col mt-5 gap-3">
+                    <div className="hidden md:block flex-col mt-5 gap-3 space-y-3">
                       <p className="font-bold">
                         Price:
-                        <span className="font-mono font-light">
+                        <span className="font-body  font-medium">
                           ${product.price}.00
                         </span>
                       </p>
@@ -221,7 +221,7 @@ const ModalPage = () => {
                           cart.addOneToCart(product.id);
                           addToCartHandler();
                         }}
-                        className="bg-buttonGreen  border p-1 px-6 rounded-[4px] text-center w-fit"
+                        className="bg-buttonGreen font-body font-medium  border p-1 px-6 rounded-[4px] text-center w-fit"
                       >
                         Add to Cart
                       </button>
@@ -270,7 +270,7 @@ const ModalPage = () => {
                   <div className="flex md:hidden justify-between mt-10 px-5">
                     <p className="font-bold">
                       Price:
-                      <span className="font-mono font-light">
+                      <span className="font-body font-medium">
                         ${product.price}.00
                       </span>
                     </p>
@@ -280,7 +280,7 @@ const ModalPage = () => {
                         cart.addOneToCart(product.id);
                         addToCartHandler();
                       }}
-                      className="bg-buttonGreen border p-1 px-3 rounded-[4px] text-center w-fit"
+                      className="bg-buttonGreen font-body font-medium border p-1 px-3 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
                     </button>
