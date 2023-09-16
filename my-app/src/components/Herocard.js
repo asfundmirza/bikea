@@ -16,17 +16,17 @@ const Herocard = (props) => {
         <div className="flex flex-1  md:bg-customGreen w-1/2 h-full items-center justify-center"></div>
         <div className="flex flex-1 bg-white w-1/2 h-full items-center justify-center"></div>
         <div
-          className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2  "
-          style={{ fontSize: "15vw" }}
+          className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2  "
+          style={{ fontSize: "17vw" }}
         >
-          <h1 className="font-bold tracking-wide text-buttonGreen relative">
+          <h1 className="font-bold font-heading tracking-wider text-buttonGreen relative">
             {props.bigHeading}
             <img
               src={props.modelImage}
               alt="Bike"
               width={700}
               height={700}
-              className="absolute top-[79%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-[59%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             />
           </h1>
         </div>
