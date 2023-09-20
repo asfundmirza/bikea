@@ -52,8 +52,6 @@ const Mobilemenu = (props) => {
         onClose={handleClose}
         PaperProps={{
           style: {
-            // width: "150px",
-            // height: "200px",
             paddingTop: "5px",
             paddingBottom: "5px",
             paddingLeft: "5px",
@@ -64,12 +62,12 @@ const Mobilemenu = (props) => {
           },
         }}
       >
-        {props.userName && (
+        {props.userName && props.userName !== "Guest" && (
           <MenuItem
             className="centeredMenuItem noHover"
             sx={{ fontSize: "20px" }}
           >
-            {props.userName !== "Guest" ? props.userName : ""}
+            {props.userName}
           </MenuItem>
         )}
 

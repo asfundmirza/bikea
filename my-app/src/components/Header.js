@@ -3,7 +3,6 @@ import bikeaLogo from "../images/bikea-01.svg";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { productsArray } from "../ProductStore";
-import { getProductsData } from "../ProductStore";
 import { CartContext } from "../CartContext";
 import Mobilemenu from "./Mobilemenu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -19,7 +18,6 @@ const Header = ({ children, isVisible }) => {
   const [userName, setUserName] = useState("");
   const [activeButton, setActiveButton] = useState(null);
   const cart = useContext(CartContext);
-  const { bypassSignIn } = useContext(CartContext);
 
   const productQuantity = productsArray.map((product) => {
     const cartItems = cart.getProductQuantity(product.id);
@@ -151,8 +149,6 @@ const Header = ({ children, isVisible }) => {
               onClose={handleClose}
               PaperProps={{
                 style: {
-                  // width: "130px",
-                  // height: "150px",
                   paddingTop: "5px",
                   paddingBottom: "5px",
                   paddingLeft: "5px",
@@ -165,7 +161,6 @@ const Header = ({ children, isVisible }) => {
             >
               {userName && (
                 <MenuItem
-                  // onClick={handleClose}
                   className="centeredMenuItem noHover"
                   sx={{ fontSize: "20px" }}
                 >
