@@ -66,7 +66,7 @@ const Mobilemenu = (props) => {
       >
         {props.userName && (
           <MenuItem
-            className="centeredMenuItem noHover"
+            className="centeredMenuItem noHover "
             sx={{ fontSize: "20px" }}
           >
             {props.userName !== "Guest" ? props.userName : ""}
