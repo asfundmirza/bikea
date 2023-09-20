@@ -100,13 +100,13 @@ const HomePage = () => {
               exit="exit"
               key={currentIndex}
               custom={direction}
-              className="font-bold font-heading tracking-wider text-buttonGreen relative"
+              className=" font-medium tracking-[2.7rem] font-heading  text-buttonGreen relative"
             >
               {product.bigHeading}
               <img
                 src={product.modelImage}
                 alt="Bike"
-                width={700}
+                width={750}
                 height={700}
                 className="absolute top-[59%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               />
@@ -119,8 +119,8 @@ const HomePage = () => {
           >
             <div className="flex  md:flex-row items-center justify-center md:gap-12 gap-6  px-4 py-4">
               <div className="flex flex-col gap-1 justify-center items-center">
-                <p>{product.modelName}</p>
-                <p className="font-semibold">{product.modelPrice}</p>
+                <p className="font-bold font-body text-lg " >{product.modelName}</p>
+                <p className="font-semibold font-body ">{product.modelPrice}</p>
               </div>
               <div className="flex gap-1 items-center">
                 <ArrowCircleLeftIcon
@@ -158,7 +158,7 @@ const HomePage = () => {
               />
             </div>
             <div className="modelbigHeading flex justify-center">
-              <h1 className="flex font-bold tracking-wide  text-buttonGreen  ">
+              <h1 className="flex font-medium font-heading tracking-[2rem]  text-buttonGreen  ">
                 {product.bigHeading}
               </h1>
             </div>
@@ -216,7 +216,7 @@ const HomePage = () => {
             <div className="flex flex-col w-full h-[12vh] bg-customGreen p-5">
               <div className="flex items-center justify-center gap-6">
                 <div className="flex flex-col gap-1 justify-center items-center">
-                  <p>{product.modelName}</p>
+                  <p className="font-bold font-body text-lg">{product.modelName}</p>
                   <p className="font-semibold">{product.modelPrice}</p>
                 </div>
                 <div className="flex gap-1 items-center">

@@ -93,7 +93,7 @@ const ModalPage = () => {
                           cart.addOneToCart(product.id);
                           addToCartHandler();
                         }}
-                        className="bg-buttonGreen font-body font-medium border p-1 px-6 rounded-[4px] text-center w-fit"
+                        className="bg-buttonGreen font-body font-medium  border p-1 px-6 rounded-[4px] text-center w-fit"
                       >
                         Add to Cart
                       </button>
@@ -102,14 +102,14 @@ const ModalPage = () => {
 
                   {/* Aero bike icons  */}
 
-                  <div className="flex md:flex-col mt-10 md:mt-0 justify-evenly items-center px-2 md:px-0 md:gap-20 ">
+                  <div className="flex md:flex-col mt-10 md:mt-0 justify-evenly  items-center px-2 md:px-0 md:gap-20 ">
                     <div className="flex flex-col items-center ">
                       <img
                         src={batteryImage}
                         alt="battery "
                         width={50}
                         height={50}
-                        className="w-[100px] h-[40px]"
+                        className="sm:w-[50px] md:w-[65px] h-[40px]"
                       />
                       <p className=" text-sm text-center">60 Km</p>
                       <p className="text-gray-400 text-sm">Power</p>
@@ -120,7 +120,7 @@ const ModalPage = () => {
                         alt="battery"
                         width={50}
                         height={50}
-                        className="w-[100px] h-[40px]"
+                        className="sm:w-[55px] md:w-[65px] h-[40px]"
                       />
                       <p className=" text-sm text-center">40 Km/h</p>
                       <p className="text-gray-400 text-sm">Speed</p>
@@ -131,7 +131,7 @@ const ModalPage = () => {
                         alt="battery "
                         width={50}
                         height={50}
-                        className="w-[100px] h-[40px]"
+                        className="sm:w-[46px] md:w-[65px] h-[40px]"
                       />
                       <p className=" text-sm text-center">140 kg</p>
                       <p className="text-gray-400 text-sm">Load</p>
@@ -153,7 +153,7 @@ const ModalPage = () => {
                         cart.addOneToCart(product.id);
                         addToCartHandler();
                       }}
-                      className="bg-buttonGreen border font-body font-medium p-1 px-3 rounded-[4px] text-center w-fit"
+                      className="bg-buttonGreen font-body font-medium  border p-1 px-4 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
                     </button>
@@ -237,7 +237,7 @@ const ModalPage = () => {
                         alt="battery "
                         width={50}
                         height={50}
-                        className="w-[100px] h-[40px]"
+                        className="sm:w-[55px] md:w-[65px] h-[40px]"
                       />
                       <p className=" text-sm text-center">80 Km</p>
                       <p className="text-gray-400 text-sm">Power</p>
@@ -248,7 +248,7 @@ const ModalPage = () => {
                         alt="battery"
                         width={50}
                         height={50}
-                        className="w-[100px] h-[40px]"
+                        className="sm:w-[55px] md:w-[65px] h-[40px]"
                       />
                       <p className=" text-sm text-center">50 Km/h</p>
                       <p className="text-gray-400 text-sm">Speed</p>
@@ -259,7 +259,7 @@ const ModalPage = () => {
                         alt="battery "
                         width={50}
                         height={50}
-                        className="w-[100px] h-[40px]"
+                        className="sm:w-[45px] md:w-[65px] h-[40px]"
                       />
                       <p className=" text-sm text-center">150 kg</p>
                       <p className="text-gray-400 text-sm">Load</p>
@@ -280,7 +280,7 @@ const ModalPage = () => {
                         cart.addOneToCart(product.id);
                         addToCartHandler();
                       }}
-                      className="bg-buttonGreen font-body font-medium border p-1 px-3 rounded-[4px] text-center w-fit"
+                      className="bg-buttonGreen font-body font-medium  border p-1 px-4 rounded-[4px] text-center w-fit"
                     >
                       Add to Cart
                     </button>

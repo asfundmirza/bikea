@@ -106,7 +106,7 @@ const Header = ({ children, isVisible }) => {
         <div className="flex justify-center gap-x-0 md:gap-x-1 flex-grow">
           <button
             onClick={modelHandler}
-            className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
+            className={`rounded-[3px] px-6 font-body font-medium text-md py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
               activeButton === "model" ? "bg-customGreen" : ""
             }`}
           >
@@ -115,7 +115,7 @@ const Header = ({ children, isVisible }) => {
 
           <button
             onClick={aboutHandler}
-            className={`rounded-[3px] px-6 py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
+            className={`rounded-[3px] px-6 font-body font-medium text-md py-2 md:py-1 transition-all duration-100 hover:cursor-pointer ${
               activeButton === "about" ? "bg-customGreen" : ""
             }`}
           >
