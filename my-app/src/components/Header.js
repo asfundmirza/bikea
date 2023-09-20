@@ -3,7 +3,6 @@ import bikeaLogo from "../images/bikea-01.svg";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { productsArray } from "../ProductStore";
-import { getProductsData } from "../ProductStore";
 import { CartContext } from "../CartContext";
 import Mobilemenu from "./Mobilemenu";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -19,7 +18,6 @@ const Header = ({ children, isVisible }) => {
   const [userName, setUserName] = useState("");
   const [activeButton, setActiveButton] = useState(null);
   const cart = useContext(CartContext);
-  const { bypassSignIn } = useContext(CartContext);
 
   const productQuantity = productsArray.map((product) => {
     const cartItems = cart.getProductQuantity(product.id);
@@ -35,12 +33,6 @@ const Header = ({ children, isVisible }) => {
 
   useEffect(() => {
     let storedUser = localStorage.getItem("E-bike-users");
-
-    // if (!storedUser && !bypassSignIn) {
-    //   navigate("/sign-in");
-    // } else if (location.pathname === "/sign-in") {
-    //   navigate("/home");
-    // }
 
     storedUser = JSON.parse(storedUser);
     if (storedUser) {
@@ -131,9 +123,10 @@ const Header = ({ children, isVisible }) => {
               fontSize="medium"
               className="hover:cursor-pointer z-10"
               onClick={cartHandler}
+              style={{ fontSize: "1.8rem" }}
             />
             {totalCartItems > 0 ? (
-              <p className="absolute bottom-5 left-1 bg-buttonGreen text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center z-[-1]">
+              <p className="absolute bottom-6 left-1.5 bg-buttonGreen text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center z-[-1]">
                 {totalCartItems}
               </p>
             ) : null}
@@ -143,6 +136,7 @@ const Header = ({ children, isVisible }) => {
               fontSize="medium"
               className="hover:cursor-pointer"
               onClick={handleClick}
+              style={{ fontSize: "2rem" }}
             />
             <Menu
               id="basic-menu"
@@ -151,8 +145,6 @@ const Header = ({ children, isVisible }) => {
               onClose={handleClose}
               PaperProps={{
                 style: {
-                  // width: "130px",
-                  // height: "150px",
                   paddingTop: "5px",
                   paddingBottom: "5px",
                   paddingLeft: "5px",
@@ -163,20 +155,27 @@ const Header = ({ children, isVisible }) => {
                 },
               }}
             >
-              {userName && (
+              {userName && userName !== "Guest" && (
                 <MenuItem
-                  // onClick={handleClose}
                   className="centeredMenuItem noHover"
-                  sx={{ fontSize: "20px" }}
+                  sx={{
+                    fontSize: "20px",
+                    fontFamily: "Montserrat",
+                    fontWeight: "Medium",
+                  }}
                 >
-                  {userName !== "Guest" ? userName : null}
+                  {userName}
                 </MenuItem>
               )}
 
               <MenuItem
                 onClick={signoutHandler}
                 className="centeredMenuItem"
-                sx={{ fontSize: "20px" }}
+                sx={{
+                  fontSize: "20px",
+                  fontFamily: "Montserrat",
+                  fontWeight: "Medium",
+                }}
               >
                 {userName !== "Guest" ? "Sign out" : "Sign in"}
               </MenuItem>

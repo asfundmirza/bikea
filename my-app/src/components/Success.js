@@ -1,21 +1,10 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import Confetti from "../animations/confetti.gif";
 import Thanks from "../images/thanks.svg";
-import { Link, useNavigate } from "react-router-dom";
-import { CartContext } from "../CartContext";
+import { Link } from "react-router-dom";
 import Header from "./Header";
 
 const Success = () => {
-  let navigate = useNavigate();
-  const { bypassSignIn } = useContext(CartContext);
-  // useEffect(() => {
-  //   let storedUser = localStorage.getItem("E-bike-users");
-
-  //   if (!storedUser && !bypassSignIn) {
-  //     navigate("/sign-in");
-  //   }
-  // }, []);
-
   return (
     <Header isVisible={false}>
       <div className="w-full h-[100vh] pt-12">

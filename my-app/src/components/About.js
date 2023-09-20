@@ -1,11 +1,8 @@
 import React from "react";
 import aboutBike from "../images/AboutBike.svg";
 import bikeaLogo from "../images/bikea-01.svg";
-import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 const About = () => {
-  let navigate = useNavigate();
-
   return (
     <Header isVisible={true}>
       <div className="flex flex-col pt-12">

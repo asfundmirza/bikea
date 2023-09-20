@@ -8,7 +8,7 @@ import speedIcon from "../images/speed icon.svg";
 import weightIcon from "../images/weight icon.svg";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const variants = {
   initial: (direction) => {
@@ -119,7 +119,9 @@ const HomePage = () => {
           >
             <div className="flex  md:flex-row items-center justify-center md:gap-12 gap-6  px-4 py-4">
               <div className="flex flex-col gap-1 justify-center items-center">
-                <p className="font-bold font-body text-lg " >{product.modelName}</p>
+                <p className="font-bold font-body text-lg ">
+                  {product.modelName}
+                </p>
                 <p className="font-semibold font-body ">{product.modelPrice}</p>
               </div>
               <div className="flex gap-1 items-center">
@@ -216,7 +218,9 @@ const HomePage = () => {
             <div className="flex flex-col w-full h-[12vh] bg-customGreen p-5">
               <div className="flex items-center justify-center gap-6">
                 <div className="flex flex-col gap-1 justify-center items-center">
-                  <p className="font-bold font-body text-lg">{product.modelName}</p>
+                  <p className="font-bold font-body text-lg">
+                    {product.modelName}
+                  </p>
                   <p className="font-semibold">{product.modelPrice}</p>
                 </div>
                 <div className="flex gap-1 items-center">
