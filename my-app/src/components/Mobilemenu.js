@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import {CgMenuMotion} from "react-icons/cg"
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Backdrop from "@mui/material/Backdrop";
@@ -40,11 +41,16 @@ const Mobilemenu = (props) => {
 
   return (
     <div>
-      <MenuIcon
+      <CgMenuMotion
+      fontSize="1.8rem"
+      className="hover:cursor-pointer"
+      onClick={handleClick}
+      />
+      {/* <MenuIcon
         fontSize="large"
         className="hover:cursor-pointer"
         onClick={handleClick}
-      />
+      /> */}
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
