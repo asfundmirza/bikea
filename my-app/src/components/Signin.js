@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase-config";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../CartContext";
+import Bikea from '../images/bikea-01.svg'
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -71,6 +72,9 @@ const Signin = () => {
         {/* Sign in Form */}
 
         <div className="flex min-h-full  flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+          <div className="flex justify-center">
+            <img style={{ width: 120, height: 60 }}  src={Bikea} alt="logo" />
+          </div>
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 className="mt-10 text-center text-4xl font-bold font-heading tracking-[0.25rem] leading-9  text-gray-900">
               Sign in
