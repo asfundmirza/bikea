@@ -138,7 +138,7 @@ const Header = ({ children, isVisible }) => {
           </div>
           <div>
             <AccountCircleIcon
-              fontSize="large"
+              fontSize="medium"
               className="hover:cursor-pointer"
               onClick={handleClick}
             />

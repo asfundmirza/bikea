@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import {CgMenuMotion} from "react-icons/cg"
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Backdrop from "@mui/material/Backdrop";
@@ -40,11 +41,16 @@ const Mobilemenu = (props) => {
 
   return (
     <div>
-      <MenuIcon
+      <CgMenuMotion
+      fontSize="1.8rem"
+      className="hover:cursor-pointer"
+      onClick={handleClick}
+      />
+      {/* <MenuIcon
         fontSize="large"
         className="hover:cursor-pointer"
         onClick={handleClick}
-      />
+      /> */}
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -65,7 +71,7 @@ const Mobilemenu = (props) => {
         {props.userName && props.userName !== "Guest" && (
           <MenuItem
             className="centeredMenuItem noHover "
-            sx={{ fontSize: "20px" }}
+            sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
           >
             {props.userName}
           </MenuItem>
@@ -77,7 +83,7 @@ const Mobilemenu = (props) => {
             modelHandler();
           }}
           className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
+          sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
         >
           Modal
         </MenuItem>
@@ -88,7 +94,7 @@ const Mobilemenu = (props) => {
             aboutHandler();
           }}
           className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
+          sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
         >
           About
         </MenuItem>
@@ -97,7 +103,7 @@ const Mobilemenu = (props) => {
             signoutHandler();
           }}
           className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
+          sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
         >
           {props.userName !== "Guest" ? "Sign out" : "Sign in"}
         </MenuItem>
