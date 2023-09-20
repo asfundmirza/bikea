@@ -55,7 +55,7 @@ const HomePage = () => {
     {
       bigHeading: "SPEED",
       modelName: "Aero X",
-      modelPrice: "$450.00",
+      modelPrice: "$400.00",
       modelImage: bikeImage,
       batteryDetails: "80 Km",
       batteryMoredetails: "Power Reserve",
