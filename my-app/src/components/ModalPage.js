@@ -33,7 +33,7 @@ const ModalPage = () => {
 
               <div className="flex flex-1 md:flex-[0.6]  mb-4 md:mb-0 md:mt-0 bg-customGreen w-full   h-fit md:h-auto   ">
                 <div className="flex flex-1 px-4 py-4 items-center justify-center object-fill">
-                  <img src={CycleImage} alt="cycle image" className="w-full" />
+                  <img src={CycleImage} alt="cycle " className="w-full" />
                 </div>
               </div>
               {/* Aero Bike */}
@@ -49,7 +49,9 @@ const ModalPage = () => {
                   <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3 space-y-4">
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold font-body">Battery Timing:</span>
+                        <span className="font-bold font-body">
+                          Battery Timing:
+                        </span>
                         The Aero Bike is equipped with a powerful lithium-ion
                         battery that offers an impressive 60 kilometers (37
                         miles) of riding on a single charge.
@@ -65,7 +67,9 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold font-body">Load Capacity:</span>
+                        <span className="font-bold font-body">
+                          Load Capacity:
+                        </span>
                         The Aero Bike boasts a robust frame and components,
                         enabling it to carry a maximum load of up to 140
                         kilograms (309 pounds).
@@ -73,7 +77,9 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold font-body">Breaking System:</span>
+                        <span className="font-bold font-body">
+                          Breaking System:
+                        </span>
                         Safety is a top priority with the Aero Bike. It comes
                         equipped with a reliable and responsive braking system.
                       </p>
@@ -85,7 +91,7 @@ const ModalPage = () => {
                       <p className="font-bold font-body">
                         Price:
                         <span className="font-body font-medium">
-                           ${product.price}.00
+                          ${product.price}.00
                         </span>
                       </p>
                       <button
@@ -177,7 +183,9 @@ const ModalPage = () => {
                   <div className="flex flex-col mt-5 md:mt-14 px-5 gap-3 space-y-4">
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold font-body">Battery Timing:</span>
+                        <span className="font-bold font-body">
+                          Battery Timing:
+                        </span>
                         The Aero Bike is equipped with a powerful lithium-ion
                         battery that offers an impressive 80 kilometers (37
                         miles) of riding on a single charge.
@@ -193,7 +201,9 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold font-body">Load Capacity:</span>
+                        <span className="font-bold font-body">
+                          Load Capacity:
+                        </span>
                         The Aero Bike boasts a robust frame and components,
                         enabling it to carry a maximum load of up to 150
                         kilograms (309 pounds).
@@ -201,7 +211,9 @@ const ModalPage = () => {
                     </div>
                     <div className="flex flex-col ">
                       <p className="leading-tight">
-                        <span className="font-bold font-body">Breaking System:</span>
+                        <span className="font-bold font-body">
+                          Breaking System:
+                        </span>
                         Safety is a top priority with the Aero Bike X. It comes
                         equipped with a reliable and responsive braking system.
                       </p>
@@ -289,7 +301,7 @@ const ModalPage = () => {
               </div>
               <div className="flex flex-1 md:flex-[0.6] mt-5 mb-4 md:mb-0 md:mt-0 bg-customGreen w-full   h-fit md:h-auto relative  ">
                 <div className="flex flex-1 px-4 py-4 items-center justify-center object-fill">
-                  <img src={CycleImage} alt="cycle image" className="w-full" />
+                  <img src={CycleImage} alt="cycle" className="w-full" />
                 </div>
               </div>
             </div>

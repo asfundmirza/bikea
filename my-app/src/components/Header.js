@@ -34,12 +34,6 @@ const Header = ({ children, isVisible }) => {
   useEffect(() => {
     let storedUser = localStorage.getItem("E-bike-users");
 
-    // if (!storedUser && !bypassSignIn) {
-    //   navigate("/sign-in");
-    // } else if (location.pathname === "/sign-in") {
-    //   navigate("/home");
-    // }
-
     storedUser = JSON.parse(storedUser);
     if (storedUser) {
       setUserName(storedUser.name);
@@ -129,9 +123,10 @@ const Header = ({ children, isVisible }) => {
               fontSize="medium"
               className="hover:cursor-pointer z-10"
               onClick={cartHandler}
+              style={{ fontSize: "1.8rem" }}
             />
             {totalCartItems > 0 ? (
-              <p className="absolute bottom-5 left-1 bg-buttonGreen text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center z-[-1]">
+              <p className="absolute bottom-6 left-1.5 bg-buttonGreen text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center z-[-1]">
                 {totalCartItems}
               </p>
             ) : null}
@@ -141,6 +136,7 @@ const Header = ({ children, isVisible }) => {
               fontSize="medium"
               className="hover:cursor-pointer"
               onClick={handleClick}
+              style={{ fontSize: "2rem" }}
             />
             <Menu
               id="basic-menu"
@@ -159,19 +155,27 @@ const Header = ({ children, isVisible }) => {
                 },
               }}
             >
-              {userName && (
+              {userName && userName !== "Guest" && (
                 <MenuItem
                   className="centeredMenuItem noHover"
-                  sx={{ fontSize: "20px" }}
+                  sx={{
+                    fontSize: "20px",
+                    fontFamily: "Montserrat",
+                    fontWeight: "Medium",
+                  }}
                 >
-                  {userName !== "Guest" ? userName : null}
+                  {userName}
                 </MenuItem>
               )}
 
               <MenuItem
                 onClick={signoutHandler}
                 className="centeredMenuItem"
-                sx={{ fontSize: "20px" }}
+                sx={{
+                  fontSize: "20px",
+                  fontFamily: "Montserrat",
+                  fontWeight: "Medium",
+                }}
               >
                 {userName !== "Guest" ? "Sign out" : "Sign in"}
               </MenuItem>

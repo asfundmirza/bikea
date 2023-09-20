@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import BikeImage from "../images/Bike.svg";
 import { productsArray } from "../ProductStore";
-import { getProductsData } from "../ProductStore";
 import { CartContext } from "../CartContext";
 import Header from "./Header";
 const Cart = () => {
