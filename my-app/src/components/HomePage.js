@@ -106,7 +106,7 @@ const HomePage = () => {
               <img
                 src={product.modelImage}
                 alt="Bike"
-                width={750}
+                width={610}
                 height={700}
                 className="absolute top-[59%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               />
