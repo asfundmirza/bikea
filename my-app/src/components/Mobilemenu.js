@@ -67,7 +67,7 @@ const Mobilemenu = (props) => {
         {props.userName && (
           <MenuItem
             className="centeredMenuItem noHover "
-            sx={{ fontSize: "20px" }}
+            sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
           >
             {props.userName !== "Guest" ? props.userName : ""}
           </MenuItem>
@@ -79,7 +79,7 @@ const Mobilemenu = (props) => {
             modelHandler();
           }}
           className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
+          sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
         >
           Modal
         </MenuItem>
@@ -90,7 +90,7 @@ const Mobilemenu = (props) => {
             aboutHandler();
           }}
           className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
+          sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
         >
           About
         </MenuItem>
@@ -99,7 +99,7 @@ const Mobilemenu = (props) => {
             signoutHandler();
           }}
           className="centeredMenuItem"
-          sx={{ fontSize: "20px" }}
+          sx={{ fontSize: "20px",fontFamily: "Montserrat",fontWeight: "Medium" }}
         >
           {props.userName !== "Guest" ? "Sign out" : "Sign in"}
         </MenuItem>
