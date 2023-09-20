@@ -76,7 +76,7 @@ const Signup = () => {
 
         <div className="flex min-h-full  flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <h2 className="mt-10 text-center text-3xl font-bold font-heading tracking-[0.25rem] leading-9  text-gray-900">
+            <h2 className="mt-10 text-center text-4xl font-bold font-heading tracking-[0.25rem] leading-9  text-gray-900">
               Create an account
             </h2>
           </div>
@@ -183,7 +183,7 @@ const Signup = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center md:justify-start">
+              <div className="flex  justify-start">
                 <button
                   type="submit"
                   className="flex w-4/12 md:w-5/12 justify-center rounded-md bg-buttonGreen px-3 py-1.5 text-md font-body font-semibold leading-6 text-white shadow-sm hover:bg-customGreen "
@@ -193,7 +193,7 @@ const Signup = () => {
               </div>
             </form>
 
-            <p className="mt-10 text-center text-sm text-gray-500 font-body">
+            <p className="mt-10 text-left text-sm text-gray-500 font-body">
               Already have an account?{" "}
               <Link to={"/sign-in"}>
                 <span className="text-buttonGreen font-semibold">Sign in</span>
